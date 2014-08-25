@@ -1,0 +1,31 @@
+<h1>SHOW BUSINESS</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @business.company_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @business.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @business.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @business.website_url %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @business.password_digest %>
+</p>
+
+<%= link_to 'Edit', edit_business_path(@business) %> |
+<%= link_to 'Back', businesses_path %>

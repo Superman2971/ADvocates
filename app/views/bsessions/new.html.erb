@@ -1,0 +1,34 @@
+<h1>Log In</h1>
+
+<div class="col-sm-6 col-sm-offset-3">
+
+<%= form_for @business, {url: bsession_path, html:{class: "well well-lg"}}  do |f| %>
+
+  <% flash.each do |k,v| %>
+    <div class="col-md-12 alert alert-danger" role="alert">
+      <%= v %>
+    </div>
+  <% end %>
+
+
+  <!-- EMAIL FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <%= f.text_field :email, required:true, :class => "form-control input-lg", placeholder: "Email Here..." %>
+  </div>
+
+  <!-- PASSWORD FIELD -->
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+      <%= f.password_field :password, required:true, :class => "form-control input-lg", placeholder: "Password Here..." %>
+  </div>
+
+  <!-- SUBMIT BUTTON -->
+  <div class="form-group">
+      <%= f.submit "Log in", :class => "btn btn-block btn-primary btn-lg"%>
+    </button>
+  </div>
+
+
+<% end %>
+</div>
