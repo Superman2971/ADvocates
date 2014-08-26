@@ -9,6 +9,7 @@ class BusinessesController < ApplicationController
 
   def new
     @business = Business.new
+    
   end
 
   def create
@@ -41,7 +42,7 @@ class BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:name)
+    params.require(:business).permit(:name, :email, :password, :password_confirmation)
   end
 
 end

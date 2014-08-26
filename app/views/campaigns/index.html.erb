@@ -4,10 +4,7 @@
   <tbody>
     <% @campaigns.each do |c| %>
       <tr>
-        <td><%= c.title %></td>
-        <td><%= c.post_copy %></td>
-        <td><%= c.start %></td>
-        <td><%= c.end %></td>
+        <td><%= c.name %></td>
         <td><%= link_to 'Show', c %></td>
         <td><%= link_to 'Edit', edit_campaign_path(c) %></td>
         <td><%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %></td>

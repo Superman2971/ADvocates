@@ -5,8 +5,6 @@
     <% @users.each do |u| %>
       <tr>
         <td><%= u.name %></td>
-        <td><%= u.age %></td>
-        <td><%= u.location %></td>
         <td><%= link_to 'Show', u %></td>
         <td><%= link_to 'Edit', edit_user_path(u) %></td>
         <td><%= link_to 'Destroy', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>

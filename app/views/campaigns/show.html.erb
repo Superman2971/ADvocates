@@ -3,24 +3,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @campaign.title %>
+  <strong>Name:</strong>
+  <%= @campaign.name %>
 </p>
 
-<p>
-  <strong>Post:</strong>
-  <%= @campaign.post_copy %>
-</p>
-
-<p>
-  <strong>Start:</strong>
-  <%= @campaign.start %>
-</p>
-
-<p>
-  <strong>End:</strong>
-  <%= @campaign.end %>
-</p>
 
 <%= link_to 'Edit', edit_campaign_path(@campaign) %> |
 <%= link_to 'Back', campaigns_path %>

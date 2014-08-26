@@ -9,6 +9,7 @@ class CampaignsController < ApplicationController
 
   def new
     @campaign = Campaign.new
+    @business = Business.find(session[:user_id])
   end
 
   def create

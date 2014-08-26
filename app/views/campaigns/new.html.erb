@@ -14,29 +14,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :post_copy %><br>
-    <%= f.text_field :post_copy %>
-  </div>
-  <div class="field">
-    <%= f.label :start %><br>
-    <%= f.date_field :start %>
-  </div>
-  <div class="field">
-    <%= f.label :end %><br>
-    <%= f.date_field :end %>
-  </div>
-  <div class="field">
-    <%= f.label :business_id %><br>
-    <%= f.collection_select :business_id, @businesses, :id, :company_name, prompt: "pick a company (required)" %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.collection_select :user_id, @users, :id, :name, prompt: "pick a user to do this thing (required)" %>
-  </div>
+
+    <%= f.hidden_field :business_id, value:@business.id %>
+
+
   <br>
   <div class="actions">
     <%= f.submit %>

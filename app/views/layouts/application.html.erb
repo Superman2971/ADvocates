@@ -10,9 +10,11 @@
 
 <%= yield %>
 
-<%= link_to 'USERS', users_path %>
-<%= link_to 'BUSINESSES', businesses_path %>
-<%= link_to 'CAMPAIGNS', campaigns_path %>
+<ul>
+  <li><%= link_to 'USERS', users_path %></li>
+  <li><%= link_to 'BUSINESSES', businesses_path %></li>
+  <li><%= link_to 'CAMPAIGNS', campaigns_path %></li>
+</ul>
 
 </body>
 </html>
