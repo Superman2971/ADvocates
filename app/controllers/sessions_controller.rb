@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:business_id] = @business.id.to_s
       redirect_to business_path(@business.id)
     else
-      redirect_to root_path
+      redirect_to business_path
     end
   end
 
