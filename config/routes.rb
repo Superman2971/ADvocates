@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#index'
-  match 'auth/twitter/callback', to: 'sessions#create'
-  match 'signout', to: "sessions#destroy", as: "signout"
-  match 'auth/failure', to: redirect('/')
+  get 'auth/twitter/callback', to: 'sessions#create'
+  get 'signout', to: "sessions#destroy", as: "signout"
+  get 'auth/failure', to: redirect('/')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

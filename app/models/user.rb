@@ -15,3 +15,4 @@ class User < ActiveRecord::Base
  	user.secret = auth["credentials"]["secret"]
  end
 end
+end 

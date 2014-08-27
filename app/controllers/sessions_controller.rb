@@ -5,14 +5,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if user = User.from_omniauth(env["omniauth.auth"])
-      session[:user_id] = user.id.to_s
-      redirect_to root_url, notice: "Signed in!"
-    elsif @business = Business.where(name: params[:business][:name]).first
-      if @business && @business.authenticate(params[:business][:password])
-        session[:business_id] = @business.id.to_s
-        redirect_to business_path(@business.id)
-      end
+    @user = User.from_omniauth(env["omniauth.auth"])
+    session[:user_id] = @user.id.to_s
+    redirect_to user_path(@user.id), notice: "Signed in!"
+    @business = Business.where(name: params[:business][:name]).first
+    if @business && @business.authenticate(params[:business][:password])
+      session[:business_id] = @business.id.to_s
+      redirect_to business_path(@business.id)
     else
       redirect_to root_path
     end
