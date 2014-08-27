@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#index'
-  get 'auth/twitter/callback', to: 'sessions#create'
+  get 'auth/:provider/callback', to: 'sessions#create'
   get 'signout', to: "sessions#destroy", as: "signout"
   get 'auth/failure', to: redirect('/')
 
