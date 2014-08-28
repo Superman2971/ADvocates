@@ -1,7 +1,7 @@
 <h1>Log In</h1>
 
 <div class="col-sm-6 col-sm-offset-3">
-
+<% biz = true %>
 <%= form_for @business, {url: session_path, html:{class: "well well-lg"}}  do |f| %>
 
   <% flash.each do |k,v| %>

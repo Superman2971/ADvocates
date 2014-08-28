@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   has_many :campaigns, through: :campaign_users
 
   def self.find_or_create_with_omniauth(auth)
-  	user = find_by(uid: auth.slice(:uid).uid) || initialize_from_omniauth(auth)
-  	user.update_dynamic_attributes(auth)
+    user = find_by(uid: auth.slice(:uid).uid) || initialize_from_omniauth(auth)
+    user.update_dynamic_attributes(auth)
   end
 
  def self.initialize_from_omniauth(auth)

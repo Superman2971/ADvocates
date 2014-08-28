@@ -17,3 +17,6 @@
 
 # Ignore env file
 /config/local_env.yml
+
+# Ignore images uploaded
+/public/system/campaigns/avatars/
