@@ -16,12 +16,12 @@ class User < ActiveRecord::Base
  	end
  end
 
- # def update_dynamic_attributes(auth)
- # 	self.location = auth[:info][:location] 
- # 	self.image = auth[:info][:image] 
- # 	self.description = auth[:info][:description]
- # 	self.save!
- # 	self
- # end
+ def update_dynamic_attributes(auth)
+ 	self.location = auth[:info][:location] 
+ 	self.image = auth[:info][:image] 
+ 	self.description = auth[:info][:description]
+ 	self.save!
+ 	self
+ end
 end
 
