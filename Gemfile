@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'stripe'
-
-gem 'omniauth-twitter'
-
-gem 'twitter'
 # Paperclip
 gem "paperclip"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

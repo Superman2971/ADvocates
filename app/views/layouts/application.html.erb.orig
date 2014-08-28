@@ -20,7 +20,7 @@
 			<% end %>
 =======
 
-  <%= render 'layouts/nav' %>
+  
 
 >>>>>>> e0cd8d3d8213e7f1b35a4713c4d018108cc990ad
 <%= yield %>
