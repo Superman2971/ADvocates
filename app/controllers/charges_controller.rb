@@ -3,8 +3,10 @@ class ChargesController < ApplicationController
 	end
 
 	def create
+
+		current_business.add_tweets(params[:money])
 	  # Amount in cents
-	  @amount = 500
+	  @amount = params[:money]
 
 	  customer = Stripe::Customer.create(
 	    :email => 'example@stripe.com',
