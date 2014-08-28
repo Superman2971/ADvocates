@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ADVOCATES</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a>Login - fake</a></li>
+            <li><a><%= link_to 'Sign up', new_user_path %></a></li>
+            <li><a>Logout - fake</a></li>
+            <li class="divider"></li>
+            <li><a>Edit - need a current_user session</a></li>
+            <li class="divider"></li>
+            <li><a>Delete - need a current_user session</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Business<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a><%= link_to 'Login', new_session_path %></a></li>
+            <li><a><%= link_to 'Sign up', new_business_path if !current_business %></a></li>
+            <li><a><%= link_to 'Logout', session_path, method: :delete if current_business%></a></li>
+            <li class="divider"></li>
+            <li><a><%= link_to 'Edit Profile', edit_business_path(current_business.id), method: :get if current_business%></a></li>
+            <li class="divider"></li>
+            <li><a><%= link_to 'Delete Profile', business_path(current_business.id), method: :delete if current_business%></a></li>
+          </ul>
+        </li>
+        <li><%= link_to 'New Campaign', new_campaign_path if current_business%></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a><%= 'Not currently logged in' if !current_business%></a></li>
+        <li><a><%= 'Currently logged in as: '+current_business.name if current_business%></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

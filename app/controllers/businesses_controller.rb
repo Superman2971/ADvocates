@@ -15,6 +15,8 @@ class BusinessesController < ApplicationController
   def create
     business = Business.new(business_params)
     if business.save
+      @business = Business.where(name: params[:business][:name]).first
+      session[:business_id] = @business.id.to_s
       redirect_to businesses_path
     else
       render 'new'
@@ -36,6 +38,7 @@ class BusinessesController < ApplicationController
 
   def destroy
     Business.find(params[:id]).destroy
+    reset_session
     redirect_to businesses_path
   end
 

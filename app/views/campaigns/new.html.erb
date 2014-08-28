@@ -14,8 +14,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label 'Name to reference this post by' %><br>
     <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Input text for the post (up to 140 characters)' %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label 'Input Image' %><br>
+  <%= f.file_field :avatar %>
   </div>
 
     <%= f.hidden_field :business_id, value:@business.id %>

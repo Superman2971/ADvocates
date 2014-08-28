@@ -1,12 +1,13 @@
-<h1>SHOW BUSINESS</h1>
+<h1><%= @business.name %> Campaigns</h1>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @business.name %>
-</p>
-
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'Back', businesses_path %> |
-<%= link_to 'Create a Campaign for this Business', new_campaign_path %>
+  <tbody>
+    <% @business.campaigns.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= link_to 'Show', c %></td>
+        <td><%= link_to 'Edit', edit_campaign_path(c) %></td>
+        <td><%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <br>
+    <% end %>
+  </tbody>

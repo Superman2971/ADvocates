@@ -1,10 +1,19 @@
-<h1>SHOW CAMPAIGN</h1>
-
-<p id="notice"><%= notice %></p>
-
+<h1><%= @campaign.name %></h1>
 <p>
-  <strong>Name:</strong>
-  <%= @campaign.name %>
+  <strong>Status:</strong>
+  <%= @campaign.status %>
+</p>
+<p>
+  <strong>Thumbnail:</strong>
+  <%= image_tag @campaign.avatar.url(:thumb) %>
+</p>
+<p>
+  <strong>Medium:</strong>
+  <%= image_tag @campaign.avatar.url(:medium) %>
+</p>
+<p>
+  <strong>Full Size:</strong>
+  <%= image_tag @campaign.avatar.url %>
 </p>
 
 

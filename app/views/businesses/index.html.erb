@@ -1,22 +1,13 @@
 <h1>BUSINESS INDEX</h1>
 
-  <h3><%= link_to 'LOG IN', new_session_path %></h3>
-
   <tbody>
     <% @businesses.each do |b| %>
       <tr>
         <td><%= b.name %></td>
         <td><%= link_to 'Show', b %></td>
-        <td><%= link_to 'Edit', edit_business_path(b) %></td>
-        <td><%= link_to 'Destroy', b, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
       </tr>
       <br>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Business', new_business_path %>
-
-<br>
