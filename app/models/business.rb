@@ -4,16 +4,17 @@ class Business < ActiveRecord::Base
   has_secure_password
 
   def add_tweets(money)
-  	puts "HELLO"
+  	puts "HELLO!!!!!"
   	puts self.tweets
   	puts money
-  	@money = money
-  	if @money == 1000
-  		self.update_attribute(:tweets, self.tweets + 5)
-  	elsif @money == 3000
-  		self.update_attribute(:tweets, self.tweets + 18)
-  	elsif @money == 10000
-  		self.update_attribute(:tweets, self.tweets + 60)
-  	end
+    @money = money
+    if @money == "1000"
+      self.update_attribute(:tweets, self.tweets + 5)
+      puts self.tweets
+    elsif @money == "3000"
+      self.update_attribute(:tweets, self.tweets + 18)
+    elsif @money == "10000"
+      self.update_attribute(:tweets, self.tweets + 60)
+    end
   end
 end
