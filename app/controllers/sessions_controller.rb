@@ -5,11 +5,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if @business != nil 
+    if @business = Business.new
       @business = Business.where(name: params[:business][:name]).first
       if @business && @business.authenticate(params[:business][:password])
         session[:business_id] = @business.id.to_s
-        redirect_business_path(@business.id)
+        redirect_to business_path(@business.id)
       else 
         redirect_to root_path
       end 
