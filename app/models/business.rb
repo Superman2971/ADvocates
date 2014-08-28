@@ -4,7 +4,6 @@ class Business < ActiveRecord::Base
   has_secure_password
 
   def add_tweets(money)
-  	puts "HELLO"
   	puts self.tweets
   	puts money
   	@money = money
