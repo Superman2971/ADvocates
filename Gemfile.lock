@@ -153,7 +153,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
-  omniauth-twitter
+  omniauth-twitter (~> 1.0.1)
   pg
   rails (= 4.1.5)
   sass-rails (~> 4.0.3)

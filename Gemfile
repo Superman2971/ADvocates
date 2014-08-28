@@ -6,7 +6,7 @@ gem 'rails', '4.1.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Omniauth Login
-gem 'omniauth-twitter'
+gem 'omniauth-twitter', '~> 1.0.1'
 # Twitter
 gem 'twitter'
 # Use SCSS for stylesheets
