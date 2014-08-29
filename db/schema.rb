@@ -60,7 +60,11 @@ ActiveRecord::Schema.define(version: 20140829050524) do
     t.string   "image"
     t.string   "token"
     t.string   "token_secret"
-    t.integer  "followers"
+    t.string   "followers"
+    t.string   "screen_name"
+    t.string   "friends"
+    t.string   "background_image"
+    t.string   "tweets"
   end
 
 end

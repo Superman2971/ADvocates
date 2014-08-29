@@ -45,7 +45,6 @@
         <li><%= link_to 'New Campaign', new_campaign_path if current_business%></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a><%= current_user if current_user%></a></li>
         <li><a><%= 'Not currently logged in' if !current_business && !current_user%></a></li>
         <li><a><%= 'Currently logged in as: '+current_business.name if current_business%></a></li>
         <li><a><%= 'Currently logged in as: '+current_user.name if current_user%></a></li>

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :campaigns, through: :campaign_users
 
   def self.find_or_create_with_omniauth(auth)
+    puts auth.to_json
   	user = find_by(uid: auth.slice(:uid).uid) || initialize_from_omniauth(auth)
   	user.update_dynamic_attributes(auth)
   end
@@ -14,6 +15,7 @@ class User < ActiveRecord::Base
  		user.name = auth[:info][:name]
     user.token = auth[:credentials][:token]
     user.token_secret = auth[:credentials][:secret]
+    user.screen_name = auth[:extra][:raw_info][:screen_name]
  		user.save
  	end
  end
@@ -22,7 +24,10 @@ class User < ActiveRecord::Base
  	self.location = auth[:info][:location] 
  	self.image = auth[:info][:image] 
  	self.description = auth[:info][:description]
-  self.followers = auth[:info][:followers_count]
+  self.followers = auth[:extra][:raw_info][:followers_count]
+  self.friends = auth[:extra][:raw_info][:friends_count]
+  self.background_image = auth[:extra][:raw_info][:profile_banner_url] || "http://placehold.it/794x397"
+  self.tweets = auth[:extra][:raw_info][:statuses_count]
  	self.save!
  	self
  end
