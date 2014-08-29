@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'tweets/new'
+
+  get 'tweets/create'
+
   resources :users, :campaigns, :businesses
   resource :session, only: [:new, :create, :destroy]
-
+  resources :tweets, only: [:new, :create]
   
   resources :charges
 
@@ -14,6 +18,8 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'signout', to: "sessions#destroy", as: "signout"
   get 'auth/failure', to: redirect('/')
+
+  post 'users/:id', to: 'users#post', as: :post
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,6 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
 
-  provider :twitter, "oU3tGgRyVXax868iZ0U8TPNGT", "4Od2ftvBA1fAkQxzD7HxKvZrdUUtdpVJxMcHCfip72ODsClYAO", {
+  provider :twitter, "HVnDjU3wFwHrfZoEYhkupIXma", "gc2xxabstcEJvxU48cCFqJOUYs7uGbm1m0syiUtvYxZLvA3WJk", {
   	:image_size => 'original'
   }
 end

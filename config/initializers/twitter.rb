@@ -1,6 +1,6 @@
-$twitter = Twitter::REST::Client.new do |config|
-  config.consumer_key = ENV['oU3tGgRyVXax868iZ0U8TPNGT']
-  config.consumer_secret = ENV['4Od2ftvBA1fAkQxzD7HxKvZrdUUtdpVJxMcHCfip72ODsClYAO']
-  config.access_token = ENV['882604026-lemiqnSYQA0OLIEujj3wVCP3OifyuxgkvQsbsRcn']
-  config.access_token_secret = ENV['n5I8PEvZSlJA682OQt7fhtTpZ1vHjqov38VpxCwCrnUSp']
-end
+# $twitter = Twitter::REST::Client.new do |config|
+#   config.consumer_key = ENV['HVnDjU3wFwHrfZoEYhkupIXma']
+#   config.consumer_secret = ENV['gc2xxabstcEJvxU48cCFqJOUYs7uGbm1m0syiUtvYxZLvA3WJk']
+#   config.access_token = ENV['333193431-LvjgEmP3gm4iKcrWqrPP32dha72tZudl58EFHGrR']
+#   config.access_token_secret = ENV['fyEcaysDkA9gv8IYgjeDg2Q7r0kWlONLoPFtQZp7IaT3h']
+# end

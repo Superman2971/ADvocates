@@ -1,12 +1,62 @@
-<h1>SHOW USER</h1>
 
-<p id="notice"><%= notice %></p>
+<div class="post_container">
+  <header>
+    <div class="bio">
+      <%= image_tag @user.background_image, :class=>"bg" %>
+      <div class="desc">
+        <h3><%= @user.screen_name %></h3>
+        <p><%= @user.description %></p>
+      </div>
+    </div>
+    <div class="avatarcontainer">
+    <%= image_tag @user.image, :class=>"avatar" %>
+      <div class="hover">
+          <div class="icontwitter"></div>
+      </div>
+    </div>
+  </header>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <div class="content">
+    <div class="data">
+      <ul>
+        <li>
+          <%= @user.tweets %>
+          <span>Tweets</span>
+        </li>
+        <li>
+          <%= @user.followers %>
+          <span>Followers</span>
+        </li>
+        <li>
+          <%= @user.friends %>
+          <span>Following</span>
+        </li>
+      </ul>
+    </div>
+    <div class="follow"> <div class="icontwitter"></div> Get Paid</div>
+  </div>
+</div>
+ 
+<h1>CAMPAIGN POSTS</h1>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% @campaigns.each do |c| %>
+<div class="post_container">
+  <header>
+    <div class="bio">
+      <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
+      <div class="desc">
+        <h3><%= c.business.name %></h3>
+        <p>Make $2 for posting</p>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+      <div>
+        <h3><%= c.name %></h3>
+        <p><%= c.status %></p>
+      </div>
+    <div class="center"><%= button_to "Post for $2", post_path(@user), class:"follow" %>
+    </div>
+  </div>
+</div>
+<% end %>

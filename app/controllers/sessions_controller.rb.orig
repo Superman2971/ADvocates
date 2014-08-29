@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
     current_uri = request.env['PATH_INFO']
     if current_uri == "/session"
 =======
-    if Business.where(name: params[:business][:name]).first
->>>>>>> 5cd91cad33f9cde082200f1c69c74e1a6c4fa51d
+    if @business == Business.new || params[:test] == "test"
+>>>>>>> 7ee87a4e6dc6d6a387886a81d81e7af48013ba9b
       @business = Business.where(name: params[:business][:name]).first
       if @business && @business.authenticate(params[:business][:password])
         session[:business_id] = @business.id.to_s
@@ -17,10 +17,10 @@ class SessionsController < ApplicationController
       else 
         redirect_to root_path
 <<<<<<< HEAD
-      end 
-=======
       end
->>>>>>> 5cd91cad33f9cde082200f1c69c74e1a6c4fa51d
+=======
+      end 
+>>>>>>> 7ee87a4e6dc6d6a387886a81d81e7af48013ba9b
     else
       omniauth = env["omniauth.auth"] 
       user = User.find_or_create_with_omniauth(@omniauth)
