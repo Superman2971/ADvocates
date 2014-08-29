@@ -39,6 +39,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Add Rspec
 gem 'rspec-rails'
+
+gem 'pry-rails', group: :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
