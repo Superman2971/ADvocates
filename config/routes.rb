@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'tweets/new'
-
-  get 'tweets/create'
-
   resources :users, :campaigns, :businesses
   resource :session, only: [:new, :create, :destroy]
   resources :tweets, only: [:new, :create]
