@@ -17,3 +17,10 @@
 
 # Ignore env file
 /config/local_env.yml
+
+# Ignore avatar image
+/public/system/campaigns/avatars
+
+# Ignore the twitter APIs
+/config/initializers/omniauth.rb
+/config/initializers/twitter.rb

@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
  		user.provider = auth[:provider]
  		user.uid = auth[:uid]
  		user.name = auth[:info][:name]
+    user.token = auth[:credentials][:token]
+    user.token_secret = auth[:credentials][:secret]
  		user.save
  	end
  end
@@ -20,6 +22,7 @@ class User < ActiveRecord::Base
  	self.location = auth[:info][:location] 
  	self.image = auth[:info][:image] 
  	self.description = auth[:info][:description]
+  self.followers = auth[:info][:followers_count]
  	self.save!
  	self
  end

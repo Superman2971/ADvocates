@@ -17,9 +17,13 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a>Login - fake</a></li>
-            <li><a><%= link_to 'Sign up', new_user_path %></a></li>
-            <li><a>Logout - fake</a></li>
+            <li><a>
+              <% if current_user %>Signed in as <%= current_user.name %>!
+                <%= link_to "Sign out", signout_path %>
+              <% else %>
+                <%= link_to "Sign in with Twitter", "auth/twitter" %>
+              <% end %>
+            </a></li>
             <li class="divider"></li>
             <li><a>Edit - need a current_user session</a></li>
             <li class="divider"></li>
@@ -41,8 +45,10 @@
         <li><%= link_to 'New Campaign', new_campaign_path if current_business%></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a><%= 'Not currently logged in' if !current_business%></a></li>
+        <li><a><%= current_user if current_user%></a></li>
+        <li><a><%= 'Not currently logged in' if !current_business && !current_user%></a></li>
         <li><a><%= 'Currently logged in as: '+current_business.name if current_business%></a></li>
+        <li><a><%= 'Currently logged in as: '+current_user.name if current_user%></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

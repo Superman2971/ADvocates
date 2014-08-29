@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'signout', to: "sessions#destroy", as: "signout"
   get 'auth/failure', to: redirect('/')
 
+  post 'users/:id', to: 'users#post', as: :post
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

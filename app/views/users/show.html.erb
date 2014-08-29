@@ -7,6 +7,29 @@
   <%= @user.name %>
 </p>
 
+<p>
+  <strong>Location:</strong>
+  <%= @user.location %>
+</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<p>
+  <strong>Description:</strong>
+  <%= @user.description %>
+</p>
+
+<p>
+  <strong>Profile Image:</strong>
+  <%= image_tag @user.image %>
+</p>
+
+<div>
+  <% @campaigns.each do |c| %>
+  <li><%= c.name %></li>
+  <li><%= c.status %></li>
+  <%= button_to "Post for $2", post_path(@user) %>
+  <%= image_tag c.avatar.url(:thumb) %>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_user_path %> |
 <%= link_to 'Back', users_path %>
