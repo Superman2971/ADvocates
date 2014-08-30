@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     user.token = auth[:credentials][:token]
     user.token_secret = auth[:credentials][:secret]
     user.screen_name = auth[:extra][:raw_info][:screen_name]
- 		user.save
+ 		user.save!
  	end
  end
 
