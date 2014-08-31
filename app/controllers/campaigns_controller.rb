@@ -15,7 +15,7 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params)
     if @campaign.save
-      redirect_to campaigns_path
+      redirect_to business_path(current_business.id)
     else
       render 'new'
     end
