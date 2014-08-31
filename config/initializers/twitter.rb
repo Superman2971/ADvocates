@@ -5,9 +5,15 @@
 #   config.access_token_secret = ENV['pBHDTTORofpkvk8gj7KqTxg9djS4tBPBPxCCW48Rlxrp8']
 # end
 
+Rails.configuration.twitter = {
+  :twitter_key => ENV['TWITTER_KEY'],
+  :twitter_secret => ENV['TWITTER_SECRET']
+}
+
+
 $twitter = Twitter::REST::Client.new do |config|
-  config.consumer_key = 'q2ja5Ijjno4J8dEAhnK54ccn4'
-  config.consumer_secret = 'xFTtJz5yxhdN4Vap4W3PCvV6TO0FkCTHOMG1SdE25FGVJM88fq'
+  config.consumer_key = Rails.configuration.twitter[:twitter_key]
+  config.consumer_secret = Rails.configuration.twitter[:twitter_secret]
   config.access_token = '333193431-2zc04DyX1iyD20A9CyIgxYHQROaFUC1SHtSdGA6k'
   config.access_token_secret = 'mGCDhlXtvGxmESOe9UoqVS0LxKZIIuCGOdMR3zaMtNEJ3'
 end
