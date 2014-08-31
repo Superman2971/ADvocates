@@ -18,9 +18,22 @@
             <h3><%= c.name %></h3>
             <p ng-model="status"><%= c.status %></p>
           </div>
-        <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%>" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
+        <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
       </div>
     </div>
   </div>
   <% end %>
 </div>
+
+<script>
+    ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, 'script', 'twitter-wjs');
+</script>

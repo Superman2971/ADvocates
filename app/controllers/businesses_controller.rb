@@ -30,7 +30,7 @@ class BusinessesController < ApplicationController
   def update
     @business = Business.find(params[:id])
     if @business.update_attributes(business_params)
-      redirect_to business_path
+      redirect_to business_path(@business.id)
     else
       render 'edit'
     end
@@ -39,7 +39,7 @@ class BusinessesController < ApplicationController
   def destroy
     Business.find(params[:id]).destroy
     reset_session
-    redirect_to businesses_path
+    redirect_to root_path
   end
 
   private
