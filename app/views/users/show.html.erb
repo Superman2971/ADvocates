@@ -1,69 +1,83 @@
-<% if !current_user.nil? %>
-    <p>Click The link below to send a tweet.</p>
-    <%= link_to "Send a Tweet", new_tweet_path %>
-<% else %>
-    <p>You must log in to send a tweet.</p>
-<% end %>
+<div class="row">
+  <div class="col-sm-4">
+      <div class="post_container">
+        <header>
+          <div class="bio">
+            <%= image_tag @user.background_image, :class=>"bg" %>
+            <div class="desc">
+              <h3><%= @user.screen_name %></h3>
+              <p><%= @user.description %></p>
+            </div>
+          </div>
+          <div class="avatarcontainer">
+          <%= image_tag @user.image, :class=>"avatar" %>
+            <div class="hover">
+                <div class="icontwitter"></div>
+            </div>
+          </div>
+        </header>
 
-
-<div class="post_container">
-  <header>
-    <div class="bio">
-      <%= image_tag @user.background_image, :class=>"bg" %>
-      <div class="desc">
-        <h3><%= @user.screen_name %></h3>
-        <p><%= @user.description %></p>
+          <div class="content">
+          <div class="data">
+            <ul>
+              <li>
+                <%= @user.tweets %>
+                <span>Tweets</span>
+              </li>
+              <li>
+                <%= @user.followers %>
+                <span>Followers</span>
+              </li>
+              <li>
+                <%= @user.friends %>
+                <span>Following</span>
+              </li>
+            </ul>
+          </div>
+          <div class="follow"> <div class="icontwitter"></div> Get Paid</div>
+        </div>
       </div>
-    </div>
-    <div class="avatarcontainer">
-    <%= image_tag @user.image, :class=>"avatar" %>
-      <div class="hover">
-          <div class="icontwitter"></div>
-      </div>
-    </div>
-  </header>
-
-  <div class="content">
-    <div class="data">
-      <ul>
-        <li>
-          <%= @user.tweets %>
-          <span>Tweets</span>
-        </li>
-        <li>
-          <%= @user.followers %>
-          <span>Followers</span>
-        </li>
-        <li>
-          <%= @user.friends %>
-          <span>Following</span>
-        </li>
-      </ul>
-    </div>
-    <div class="follow"> <div class="icontwitter"></div> Get Paid</div>
   </div>
 </div>
- 
-<h1>CAMPAIGN POSTS</h1>
-
-<% @campaigns.each do |c| %>
-<div class="post_container">
-  <header>
-    <div class="bio">
-      <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
-      <div class="desc">
-        <h3><%= c.business.name %></h3>
-        <p>Make $2 for posting</p>
+  
+<div class="row">
+  <h1>CAMPAIGN POSTS</h1>
+  <% @campaigns.each do |c| %>
+  <div class="col-md-4 col-sm-6">
+    <div class="post_container">
+      <header>
+        <div class="bio">
+          <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
+          <div class="desc">
+            <h3><%= c.business.name %></h3>
+            <p>Make $2 for posting</p>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+          <div>
+            <h3><%= c.name %></h3>
+            <p ng-model="status"><%= c.status %></p>
+          </div>
+        <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%>" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
       </div>
-    </div>
-  </header>
-  <div class="content">
-      <div>
-        <h3><%= c.name %></h3>
-        <p><%= c.status %></p>
-      </div>
-    <div class="center"><%= button_to "Post for $2", post_path(@user), class:"follow" %>
     </div>
   </div>
+  <% end %>
 </div>
-<% end %>
+
+
+<script>
+    ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, 'script', 'twitter-wjs');
+</script>
+
+<br>

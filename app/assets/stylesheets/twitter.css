@@ -20,6 +20,7 @@ header {
 
 .post_container {
   width: 320px;
+  display: block;
   margin: 3em auto 1em auto;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;

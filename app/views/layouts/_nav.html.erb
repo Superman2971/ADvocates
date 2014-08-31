@@ -8,12 +8,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">ADVOCATES</a>
+      <% if !current_user && !current_business %>
+        <%= link_to "ADVOCATES", root_path, class:"navbar-brand" %>
+      <% elsif current_user %>
+        <%= link_to "ADVOCATES", user_path(current_user.id), class:"navbar-brand" %>
+      <% else %>
+        <%= link_to "ADVOCATES", business_path(current_business.id), class:"navbar-brand" %>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <% if !current_business %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -24,24 +31,26 @@
                 <%= link_to image_tag("sign-in-with-twitter-gray.png"), "auth/twitter" %>
               <% end %>
             </a></li>
-            <li class="divider"></li>
-            <li><a>Edit - need a current_user session</a></li>
-            <li class="divider"></li>
-            <li><a>Delete - need a current_user session</a></li>
           </ul>
         </li>
+        <% end %>
+        <% if !current_user %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Business<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
+            <% if !current_business %>
             <li class="navbar-text pointer" data-toggle="modal" data-target="#loginModal"><a href="#">Log in</a></li>
             <li class="navbar-text pointer" data-toggle="modal" data-target="#userModal"><a href="#">Sign up</a></li>
+            <% else %>
             <li><a><%= link_to 'Logout', session_path, method: :delete if current_business%></a></li>
             <li class="divider"></li>
             <li><a><%= link_to 'Edit Profile', edit_business_path(current_business.id), method: :get if current_business%></a></li>
             <li class="divider"></li>
             <li><a><%= link_to 'Delete Profile', business_path(current_business.id), method: :delete if current_business%></a></li>
+            <% end %>
           </ul>
         </li>
+        <% end %>
         <li><%= link_to 'New Campaign', new_campaign_path if current_business%></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :users, :campaigns, :businesses
   resource :session, only: [:new, :create, :destroy]
   resources :tweets, only: [:new, :create]
-
   
   resources :charges
 

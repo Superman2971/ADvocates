@@ -1,13 +1,30 @@
 <h1><%= @business.name %> Campaigns</h1>
 
-  <tbody>
-    <% @business.campaigns.each do |c| %>
-      <tr>
-        <td><%= c.name %></td>
-        <td><%= link_to 'Show', c %></td>
-        <td><%= link_to 'Edit', edit_campaign_path(c) %></td>
-        <td><%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <br>
-    <% end %>
-  </tbody>
+<% if @business.campaigns = [] %>
+  nothing!!!!
+<% end %>
+
+<div class="row">
+  <% @business.campaigns.each do |c| %>
+  <div class="col-md-4 col-sm-6">
+    <div class="post_container">
+      <header>
+        <div class="bio">
+          <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
+          <div class="desc">
+            <h3><%= link_to 'Edit', edit_campaign_path(c) %></h3>
+            <p>Make edits to your campaign post</p>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+          <div>
+            <h3><%= c.name %></h3>
+            <p ng-model="status"><%= c.status %></p>
+          </div>
+        <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%>" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
