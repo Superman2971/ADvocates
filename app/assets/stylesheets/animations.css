@@ -1,0 +1,180 @@
+/*animations go here*/
+.citybglight {
+  background-image: url("cityscapebglight.png");
+  margin-top: -250px;
+  background-repeat: repeat-x;
+  height: 250px;
+  width: 100%;
+  -webkit-animation: slide 7s linear infinite; 
+}
+
+@-webkit-keyframes slide {
+  from { background-position: 0; }
+  to { background-position: 730px; }
+}
+
+.buildinglights {
+	width: 20px;
+	height: 20px;
+	background-color: #898989;
+  position: relative;
+  -webkit-animation: lights 7s steps(1) infinite; 
+  animation: lights 7s steps(1) infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes lights {
+    0%   {left: 38px; top:112px;}
+    20%  {left:0px; top:350px;}
+    25%  {left:422px; top:249px;}
+    45%  {left:0px; top:350px;}
+    50%	 {left:0px; top:400px;}
+    70%  {left:0px; top:350px;}
+    75%  {left:272px; top:230px;}
+    95%  {left:0px; top:350px;}
+    100% {left: 38px; top:188px;}
+}
+
+/* Standard syntax */
+@keyframes lights {
+    0%   {left: 38px; top:112px;}
+    20%  {left:0px; top:350px;}
+    25%  {left:422px; top:249px;}
+    45%  {left:0px; top:350px;}
+    50%  {left:0px; top:400px;}
+    70%  {left:0px; top:350px;}
+    75%  {left:272px; top:230px;}
+    95%  {left:0px; top:350px;}
+    100% {left: 38px; top:188px;}
+}
+
+.buildinglights2 {
+	width: 20px;
+  height: 20px;
+  background-color: #898989;
+  position: relative;
+  -webkit-animation: lights2 6s steps(1) infinite; 
+  animation: lights 6s steps(1) infinite;
+}
+
+@-webkit-keyframes lights2 {
+    0%   {left: 400px; top:250px;}
+    33%  {left:232px; top:106px;}
+    75%  {left: 62px; top:135px;}
+    100% {left: 155px; top:197px;}
+}
+
+/* Standard syntax */
+@keyframes lights2 {
+    0%   {left: 400px; top:250px;}
+    33%  {left:232px; top:106px;}
+    75%  {left: 62px; top:135px;}
+    100% {left: 155px; top:197px;}
+}
+
+.buildinglights3 {
+  width: 20px;
+  height: 20px;
+  background-color: #898989;
+  position: relative;
+  -webkit-animation: lights3 7s steps(1) infinite; 
+  animation: lights 7s steps(1) infinite;
+}
+
+@-webkit-keyframes lights3 {
+    0%   {left: 38px; top:174px;}
+    20%  {left:0px; top:350px;}
+    40%  {left:152px; top:150px;}
+    60%  {left:0px; top:370px;}
+    80% {left: 233px; top:113px;}
+    100% {left: 0px; top:420px;}
+}
+
+/* Standard syntax */
+@keyframes lights3 {
+    0%   {left: 38px; top:174px;}
+    20%  {left:0px; top:350px;}
+    40%  {left:152px; top:150px;}
+    60%  {left:0px; top:370px;}
+    80% {left: 233px; top:113px;}
+    100% {left: 0px; top:420px;}
+}
+
+.lamplight {
+  width: 200px;
+  height: 200px;
+  left: -2;
+  top: 225px;
+  background-image: url('lamp.png');
+  position: relative;
+  -webkit-animation: lamp 3s steps(1) infinite; 
+  animation: lights 5s steps(1) infinite;
+}
+
+@-webkit-keyframes lamp {
+  0% {opacity: 0;}
+  10% {opacity: 0.7;}
+  15% {opacity: 0;}
+  20% {opacity: 0.7;}
+  25% {opacity: 0;}
+  50% {opacity: 1;}
+  75% {opacity: 0.7;}
+  85% {opacity: 1;}
+  100% {opacity: 1;}
+}
+
+@keyframes lamp {
+  0% {opacity: 0;}
+  10% {opacity: 0.3;}
+  15% {opacity: 0;}
+  20% {opacity: 0.3;}
+  25% {opacity: 0;}
+  50% {opacity: 1;}
+  75% {opacity: 0.7;}
+  85% {opacity: 1;}
+  100% {opacity: 1;}
+}
+
+.twitterbird {
+    background-image: url('twitterbird2.png');
+    height: 100px;
+    width: 100px;
+    -webkit-animation: flap 0.2s steps(3) infinite;
+    animation: fly 0.2s steps(3) 0 infinite;
+}
+
+@-webkit-keyframes flap {
+    from { background-position: 0 0; }
+    to { background-position: -300px 0; }
+}
+
+@keyframes flap {
+    from { background-position: 0 0; }
+    to { background-position: -300px 0; }
+}
+
+.birdmove {
+  height: 100px;
+  width: 100px;
+  -webkit-animation: fly 5s;
+  animation: fly 5s linear;
+  position: relative;
+  opacity: 0;
+}
+
+@-webkit-keyframes fly {
+  0% {top: -200px; left: -200px; opacity: 1;}
+  25% {top: 100px; left: 15%; opacity: 1}
+  50% {top: 200px; left: 50%; opacity: 1}
+  75% {top: 100px; left: 80%; opacity: 1}
+  100% {top: -200px; left: 100%; opacity: 1}
+}
+
+@keyframes fly {
+  0% {top: 0; left: 0px;}
+  50% {top: 100px; left: 300px;}
+  100% {top: 200px; left: 600px;}
+}
+
+
+

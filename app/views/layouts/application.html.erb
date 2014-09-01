@@ -2,6 +2,7 @@
 <html ng-app="adApp">
 <head>
   <title>ADvocate</title>
+
   <%= stylesheet_link_tag    'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quicksand:300,400,700' %>
   <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato:400,300' %>
@@ -14,7 +15,7 @@
 </head>
 <body ng-controller="adController">
 
-  <%= render 'layouts/nav' %>
+  <%= render 'layouts/nav' if !current_page?("/")%>
 
 <%= yield %>
 
