@@ -13,8 +13,8 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    business = Business.new(business_params)
-    if business.save
+    @business = Business.new(business_params)
+    if @business.save
       @business = Business.where(name: params[:business][:name]).first
       session[:business_id] = @business.id.to_s
       redirect_to business_path(@business.id)
