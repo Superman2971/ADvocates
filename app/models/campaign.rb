@@ -4,7 +4,8 @@ class Campaign < ActiveRecord::Base
   has_many :users, through: :campaign_users
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-
+  
+  validates_presence_of :name, :business_id, :status
   validates :status, length: { maximum: 140 }
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
 end

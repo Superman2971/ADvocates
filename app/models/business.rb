@@ -3,6 +3,8 @@ class Business < ActiveRecord::Base
   has_many :campaigns, class_name: "Campaign", foreign_key: :business_id, inverse_of: :business
   has_secure_password
 
+  validates_presence_of :name, :email, :password
+
   def add_tweets(money)
   	puts "HELLO!!!!!"
   	puts self.tweets

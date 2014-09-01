@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :campaign_users
   has_many :campaigns, through: :campaign_users
 
+  validates_presence_of :name, :uid, :screen_name
+
   def self.find_or_create_with_omniauth(auth)
     puts auth.to_json
   	user = find_by(uid: auth.slice(:uid).uid) || initialize_from_omniauth(auth)

@@ -314,16 +314,16 @@ z-index: 5;
 .pipeleft {
 	background-image: url('pipeleft.png');
 	float: left;
-	height: 94;
-	width: 53;
+	height: 94px;
+	width: 53px;
 	background-size: cover;
 }
 
 .piperight {
 	background-image: url('piperight.png');
 	float: right;
-	height: 94;
-	width: 53;
+	height: 94px;
+	width: 53px;
 	background-size: cover;
 }
 
