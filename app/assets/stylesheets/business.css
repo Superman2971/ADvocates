@@ -1,0 +1,14 @@
+.bustabcontainer {
+	float: right;
+}
+
+.campaigns-container {
+	float: left;
+	width: 650px;
+}
+
+.buscontainer {
+	margin-right: auto;
+	margin-left: auto;
+	width: 1200px;
+}

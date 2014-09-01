@@ -19,6 +19,7 @@ header {
   border-top-right-radius: 8px; }
 
 .post_container {
+  float: left;
   width: 320px;
   display: block;
   margin: 3em auto 1em auto;

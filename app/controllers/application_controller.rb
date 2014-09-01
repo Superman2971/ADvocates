@@ -20,4 +20,11 @@ private
   end
 
   helper_method :business_new
+
+  def campaign_new
+    @campaign = Campaign.new
+  end
+
+  helper_method :campaign_new
+  
 end

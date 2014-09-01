@@ -1,28 +1,125 @@
-<h1><%= @business.name %> Campaigns</h1>
-
-<div class="row">
-  <% @business.campaigns.each do |c| %>
-  <div class="col-md-4 col-sm-6">
-    <div class="post_container">
-      <header>
-        <div class="bio">
-          <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
-          <div class="desc">
-            <h3><%= link_to 'Edit', edit_campaign_path(c) %></h3>
-            <p>Make edits to your campaign post</p>
+<div class="buscontainer">
+  <h1>Unused Tweets: <%= @business.tweets %></h1>
+  <h1><%= @business.name %> Campaigns</h1>
+  <div class="campaigns-container">
+    <div class="row">
+      <% @business.campaigns.each do |c| %>
+      <div class="col-md-4 col-sm-6">
+        <div class="post_container">
+          <header>
+            <div class="bio">
+              <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
+              <div class="desc">
+                <h3><%= link_to 'Edit', edit_campaign_path(c) %></h3>
+                <p>Make edits to your campaign post</p>
+              </div>
+            </div>
+          </header>
+          <div class="content">
+              <div>
+                <h3><%= c.name %></h3>
+                <p ng-model="status"><%= c.status %></p>
+              </div>
+            <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
           </div>
         </div>
-      </header>
-      <div class="content">
-          <div>
-            <h3><%= c.name %></h3>
-            <p ng-model="status"><%= c.status %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="bustabcontainer">
+  <!-- Business nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#newcamp" role="tab" data-toggle="tab">New Campaign</a></li>
+      <li><a href="#buytweets" role="tab" data-toggle="tab">Buy Tweets</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="newcamp">
+        <!-- new campaigns begin -->
+        <%= form_for(campaign_new) do |f| %>
+          <% if campaign_new.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+              <ul>
+              <% @campaign.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label 'Name to reference this post by' %><br>
+            <%= f.text_field :name %>
           </div>
-        <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
+          <div class="field">
+            <%= f.label 'Input text for the post (up to 140 characters)' %><br>
+            <%= f.text_field :status %>
+          </div>
+          <div class="field">
+            <%= f.label 'Input Image' %><br>
+          <%= f.file_field :avatar %>
+          </div>
+
+            <%= f.hidden_field :business_id, value:@business.id %>
+
+
+          <br>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+        <!-- new campaign end -->
+      </div>
+      <div class="tab-pane" id="buytweets">
+        <!-- charges begin -->
+        <%= form_tag charges_path do %>
+          <article>
+            <label class="amount">
+            <span>$10.00 / 5 Tweets</span>
+            </label>
+          </article>
+          <%= hidden_field_tag(:money, "1000") %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="5 Tweets"
+            data-amount="1000"></script>
+          <% end %>
+
+          <%= form_tag charges_path do %>
+            <article>
+              <label class="amount">
+              <span>$30.00 / 20 Tweets</span>
+              </label>
+            </article>
+            <%= hidden_field_tag(:money, "3000") %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="5 Tweets"
+            data-amount="3000"></script>
+          <% end %>
+
+          <%= form_tag charges_path do %>
+            <article>
+              <label class="amount">
+              <span>$100.00 / 60 Tweets</span>
+              </label>
+            </article>
+            <%= hidden_field_tag(:money, "10000") %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="5 Tweets"
+            data-amount="10000"></script>
+        <% end %>
+        <!-- charges end -->
       </div>
     </div>
   </div>
-  <% end %>
 </div>
 
 <script>
