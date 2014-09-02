@@ -51,10 +51,6 @@
 	z-index: 1;
 }
 
-body, html {
-	overflow: hidden;
-}
-
 body {
 	font: 100% / 1.5 Arial;
 }

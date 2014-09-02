@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  require 'open-uri'
+  
   has_many :campaign_users
   has_many :campaigns, through: :campaign_users
 
@@ -52,9 +54,8 @@ class User < ActiveRecord::Base
       config.access_token        = token
       config.access_token_secret = token_secret
     end
-
-    file = open('#{Rails.root}/public/imgs/cat.jpg')
-    client.update_with_media(tweet, file)
+    media = open('http://jasonlefkowitz.net/wp-content/uploads/2013/07/big_cat_found_spoh-760994.jpg')
+    client.update_with_media(tweet, media)
   end
 
 end
