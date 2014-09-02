@@ -64,7 +64,7 @@
           </div>
           <div class="field">
             <%= f.label 'Input Image' %><br>
-          <%= f.file_field :avatar %>
+          <%= f.file_field :avatar || "/public/imgs/cat.jpg" %>
           </div>
 
             <%= f.hidden_field :business_id, value: @business.id %>

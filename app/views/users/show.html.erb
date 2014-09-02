@@ -57,7 +57,6 @@
       <div class="content">
           <div>
             <h3><%= c.name %></h3>
-            <%= button_to "Post for $2", post_path(@user) %>
             <p ng-model="status"><%= c.status %></p>
           </div>
         <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
