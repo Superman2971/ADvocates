@@ -52,8 +52,9 @@ class User < ActiveRecord::Base
       config.access_token        = token
       config.access_token_secret = token_secret
     end
-    
-    client.update_with_media(tweet, img)
+
+    file = open('#{Rails.root}/public/imgs/cat.jpg')
+    client.update_with_media(tweet, file)
   end
 
 end

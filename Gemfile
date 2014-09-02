@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rmagick', '2.13.2'
+
 gem 'stripe'
 # Paperclip
 gem "paperclip"
