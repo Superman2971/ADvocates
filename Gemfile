@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rmagick', '2.13.2'
-
+# for payments
 gem 'stripe'
 # Paperclip
 gem "paperclip"
+#add AWS services for heroku images
+gem 'aws-sdk'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use postgresql as the database for Active Record
