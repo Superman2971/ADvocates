@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @campaigns = Campaign.all
   end
 
   def show
@@ -15,5 +16,12 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path
   end
+
+  def post
+    current_user.singletweet(params[:status])
+    current_user.imgtweet(params[:status], params[:img])
+    redirect_to users_path
+  end
+
 
 end

@@ -17,7 +17,7 @@ class CampaignsController < ApplicationController
     if @campaign.save
       redirect_to business_path(current_business.id)
     else
-      render 'new'
+      redirect_to business_path(current_business.id)
     end
   end
 

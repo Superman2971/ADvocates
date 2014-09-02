@@ -1,6 +1,7 @@
 <div class="buscontainer">
   <h1>Unused Tweets: <%= @business.tweets %></h1>
   <h1><%= @business.name %> Campaigns</h1>
+  <h1>Test</h1>
   <div class="campaigns-container">
     <div class="row">
       <% @business.campaigns.each do |c| %>
@@ -66,7 +67,7 @@
           <%= f.file_field :avatar %>
           </div>
 
-            <%= f.hidden_field :business_id, value:@business.id %>
+            <%= f.hidden_field :business_id, value: @business.id %>
 
 
           <br>

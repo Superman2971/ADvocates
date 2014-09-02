@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
  	self
  end
 
-  def tweet(tweet)
+  def singletweet(tweet)
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = Rails.configuration.twitter[:twitter_key]
       config.consumer_secret     = Rails.configuration.twitter[:twitter_secret]
@@ -44,5 +44,17 @@ class User < ActiveRecord::Base
     
     client.update(tweet)
   end
+
+  def imgtweet(tweet, img)
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = Rails.configuration.twitter[:twitter_key]
+      config.consumer_secret     = Rails.configuration.twitter[:twitter_secret]
+      config.access_token        = token
+      config.access_token_secret = token_secret
+    end
+    
+    client.update_with_media(tweet, img)
+  end
+
 end
 
