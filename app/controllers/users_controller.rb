@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   def post
     current_user.singletweet(params[:status])
     current_user.imgtweet(params[:status], params[:img])
+    # Call method to add foreign key to connect
+    # campaign and user
+    # current_user.tweeted
     redirect_to users_path
   end
 

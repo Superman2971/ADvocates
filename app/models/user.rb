@@ -69,5 +69,9 @@ class User < ActiveRecord::Base
     client.update_with_media(tweet, file)
   end
 
+  # def tweeted(camp)
+  #   self.campaigns.push(camp)
+  # end
+
 end
 
