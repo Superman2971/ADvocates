@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
+<<<<<<< HEAD
 # gem 'rmagick', '2.13.2'
 
+=======
+gem 'rmagick', '2.13.2'
+# for payments
+>>>>>>> 43fae6b58423d808de410331229674aa839ef81d
 gem 'stripe'
 # Paperclip
 gem "paperclip"

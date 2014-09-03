@@ -6,6 +6,7 @@ class Business < ActiveRecord::Base
   validates_presence_of :name, :email, :password
   validates :password, length: { minimum: 6 }
   validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i
+
   def add_tweets(money)
   	puts "HELLO!!!!!"
   	puts self.tweets

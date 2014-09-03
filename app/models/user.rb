@@ -6,6 +6,16 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name, :uid, :screen_name
 
+  # before_save :posted --> change to work with the post
+
+  def posted
+    # Find the campaign post business owner
+    business = Campaign.find(self.campaign_id)
+    # Logic to modify tweets business has left
+
+    # How to hid campaign once they hit 0 ????
+  end
+
   def self.find_or_create_with_omniauth(auth)
     puts auth.to_json
   	user = find_by(uid: auth.slice(:uid).uid) || initialize_from_omniauth(auth)
@@ -53,9 +63,14 @@ class User < ActiveRecord::Base
       config.access_token        = token
       config.access_token_secret = token_secret
     end
-    media = open('http://jasonlefkowitz.net/wp-content/uploads/2013/07/big_cat_found_spoh-760994.jpg')
-    client.update_with_media(tweet, media)
+
+    file = open(img)
+    client.update_with_media(tweet, file)
   end
+
+  # def tweeted(camp)
+  #   self.campaigns.push(camp)
+  # end
 
 end
 

@@ -64,6 +64,8 @@
             </div>
           <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
         </div>
+<<<<<<< HEAD
+=======
       </header>
       <div class="content">
           <div>
@@ -71,6 +73,7 @@
             <p ng-model="status"><%= c.status %></p>
           </div>
         <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
+>>>>>>> 43fae6b58423d808de410331229674aa839ef81d
       </div>
     </div>
     <% end %>
