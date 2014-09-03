@@ -43,26 +43,30 @@
 <div class="row">
   <h1>CAMPAIGN POSTS</h1>
   <% @campaigns.each do |c| %>
-  <div class="col-md-4 col-sm-6">
-    <div class="post_container">
-      <header>
-        <div class="bio">
-          <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
-          <div class="desc">
-            <h3><%= c.business.name %></h3>
-            <p>Make $2 for posting</p>
+  <div>
+    <% if (c.followers <= @user.followers) && (c.location == @user.location) %>
+    <div class="col-md-4 col-sm-6">
+      <div class="post_container">
+        <header>
+          <div class="bio">
+            <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
+            <div class="desc">
+              <h3><%= c.business.name %></h3>
+              <p>Make $2 for posting</p>
+            </div>
           </div>
+        </header>
+        <div class="content">
+            <div>
+              <h3><%= c.name %></h3>
+              <%= button_to "Post for $2", post_path(@user) %>
+              <p ng-model="status"><%= c.status %></p>
+            </div>
+          <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
         </div>
-      </header>
-      <div class="content">
-          <div>
-            <h3><%= c.name %></h3>
-            <%= button_to "Post for $2", post_path(@user) %>
-            <p ng-model="status"><%= c.status %></p>
-          </div>
-        <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
       </div>
     </div>
+    <% end %>
   </div>
   <% end %>
 </div>

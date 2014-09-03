@@ -42,7 +42,7 @@ class CampaignsController < ApplicationController
   private
 
   def campaign_params
-    params.require(:campaign).permit(:name, :status, :avatar, :business_id)
+    params.require(:campaign).permit(:name, :status, :avatar, :location, :followers, :business_id)
   end
 
 end

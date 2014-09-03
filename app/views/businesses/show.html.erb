@@ -66,6 +66,14 @@
             <%= f.label 'Input Image' %><br>
           <%= f.file_field :avatar %>
           </div>
+          <div class="field">
+            <%= f.label 'Preferred ADvocate Location' %><br>
+            <%= f.text_field :location, placeholder: "ex. Los Angeles, CA" %>
+          </div>
+          <div class="field">
+            <%= f.label 'Minimum ADvocate Followers' %><br>
+            <%= f.number_field :followers %>
+          </div>
 
             <%= f.hidden_field :business_id, value: @business.id %>
 
