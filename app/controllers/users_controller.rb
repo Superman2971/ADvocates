@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     # Create campaign_user to add foreign keys to connect campaign and user
     CampaignUser.create(user_id:current_user.id,campaign_id:params[:campaign])
     # Subtract a Tweet as payment from the Business
-    @business = current_user.campaigns.last.business
+    # @business = current_user.campaigns.last.business
     # puts "THESE THINGS"
     # puts @business
     # puts @business.tweets
