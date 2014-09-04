@@ -15,6 +15,7 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params)
     if @campaign.save
+      @campaign.modify_quantity
       redirect_to business_path(current_business.id)
     else
       redirect_to business_path(current_business.id)
@@ -42,7 +43,7 @@ class CampaignsController < ApplicationController
   private
 
   def campaign_params
-    params.require(:campaign).permit(:name, :status, :avatar, :location, :followers, :business_id)
+    params.require(:campaign).permit(:name, :status, :avatar, :location, :followers, :business_id, :tweets)
   end
 
 end

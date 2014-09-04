@@ -8,4 +8,21 @@ class Campaign < ActiveRecord::Base
   validates_presence_of :name, :business_id, :status, :location, :followers
   validates :status, length: { maximum: 140 }
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
+
+  validate :validate_bus_tweets
+
+  def modify_quantity
+		#Find the yogurt this person wants to buy
+		business = Business.find(self.business.id)
+
+		#Logic to modify the quantity 
+		business.update_attribute(:tweets, business.tweets - self.tweets)
+  end
+
+  def validate_bus_tweets 
+  	unless business.tweets >= self.tweets
+  		errors.add(:campaign, "Please purchase more tweets!")
+ 	 	end
+	end
+
 end

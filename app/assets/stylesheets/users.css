@@ -1,0 +1,143 @@
+
+.userpostscontainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 680px;
+}
+
+.campaignsinuser {
+	float: left;
+	padding: 10px;
+}
+
+.user-name {
+	font-family: "HelveticaNeue-Light";
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.userindex-container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*user information*/
+
+.usercontainer {
+	background-color: white;
+	width: 200px;
+	height: 200px;
+	float: left;
+	border-radius: 5px;
+}
+
+/*twitter user index*/
+
+.scrollcontainer {
+	overflow: scroll;
+	width: 750px;
+	height: 100vh;
+	padding-left: 20px;
+}
+
+.twitcontainer {
+	float: left;
+	width: 588px;
+	background-color: white;
+	border-radius: 5px;
+}
+
+.twitcontent {
+	width: 588px;
+	float: left;
+	border-bottom: 1px solid #e1e8ed;
+}
+
+.campaignname {
+	height: 15px;
+	font-family: "HelveticaNeue-Light";
+	font-weight: 300;
+	font-size: 12px;
+	color: #8899a6;
+}
+
+.twitprofile {
+	width: 48px;
+	height: 100px;
+	float: left;
+	margin-left: 12px;
+}
+
+.twitprofilepic {
+	width: 48px;
+	height: 48px;
+	border-radius: 5px;
+	margin-top: 12px;
+}
+
+.status {
+	width: 506px;
+	height: 36px;
+	font-family: "HelveticaNeue-Light";
+	font-weight: 300;
+	float: left;
+}
+
+.twitstatusimg {
+	width: 506px;
+	float:left;
+}
+
+.promotedby {
+	font-family: "HelveticaNeue-Light";
+	font-weight: 300;
+	font-size: 12px;
+	color: #8899a6;
+	float: left;
+}
+
+.statusimg {
+	width: 506px;
+	border-radius: 5px;
+}
+
+.twitgroup {
+	float: left;
+	width: 300px;
+}
+
+.twitname {
+	font-family: "HelveticaNeue-Light";
+	font-weight: bold;
+	font-size: 12px;
+	float: left;
+}
+
+.twitscreenname {
+	font-family: "HelveticaNeue-Light";
+	font-weight: 300;
+	font-size: 12px;
+	float: left;
+}
+
+.twitright {
+	float: left;
+	width: 506px;
+	margin-left: 10px;
+}
+
+.campaignname {
+	width: 500px;
+	float: left;
+}
+
+.usertwitbutton {
+	background-color: #be1831;
+	border-style: none;
+	color: white;
+	font-family: "HelveticaNeue-Light";
+	font-weight: 500;
+	width: 150px;
+	padding: 10px;
+}
+
