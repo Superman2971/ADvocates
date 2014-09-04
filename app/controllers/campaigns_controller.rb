@@ -1,6 +1,10 @@
 class CampaignsController < ApplicationController
+  
+  respond_to :json
+
   def index
     @campaigns = Campaign.all
+    respond_with @campaigns, each_serializer: CampaignSerializer
   end
 
   def show

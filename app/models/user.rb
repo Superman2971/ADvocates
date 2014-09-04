@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
       config.access_token_secret = token_secret
     end
 
-    file = open('http://jasonlefkowitz.net/wp-content/uploads/2013/07/big_cat_found_spoh-760994.jpg')
+    file = open(img)
     client.update_with_media(tweet, file)
   end
 
