@@ -112,15 +112,15 @@ body, html {
       </div>
       <div class="modal-body">
     <%= form_for business_new, url: session_path do |f| %>
-    <% flash.each do |k,v| %>
-    <div class="col-md-12 alert alert-danger" role="alert">
-      <%= v %>
-    </div>
-  <% end %>
-     <%= hidden_field_tag :test, "test" %>
-    Username:  <%= f.text_field :name, required:true, :class => "form-control input-lg", placeholder: "Name Here..." %>
+      <% flash.each do |k,v| %>
+        <div class="col-md-12 alert alert-danger" role="alert">
+          <%= v %>
+        </div>
+      <% end %>
+    <%= hidden_field_tag :test, "test" %>
+    Account Email:  <%= f.text_field :email, :required => true, :class => "form-control input-lg", placeholder: "Email Here..." %>
     <br />
-    Password: <%= f.password_field :password, required:true, :class => "form-control input-lg", placeholder: "Password Here..." %>
+    Password: <%= f.password_field :password, :required => true, :class => "form-control input-lg", placeholder: "Password Here..." %>
     <%= f.submit "Log in", :class => 'startbuttons' %>
   <% end %>
       </div>
@@ -139,22 +139,35 @@ body, html {
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-          <%= form_for business_new do |f| %>
+      <%= form_for business_new do |f| %>
+
+        <% if business_new.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@business.errors.count, "error") %> prohibited your login:</h2>
+
+            <ul>
+            <% business_new.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
       <div class="field">
         <%= f.label :name %><br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, :required => true %>
       </div>
       <div class="field">
         <%= f.label :email %><br>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, :required => true %>
       </div>
       <div class="field">
         <%= f.label :password %><br>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
       </div>
       <div class="field">
         <%= f.label :password_confirmation %><br>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, :required => true %>
       </div>
       <br>
       <div class="actions">

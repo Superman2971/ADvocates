@@ -183,8 +183,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.3.0)
-      coffee-rails
     twitter (5.11.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -226,6 +224,5 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   stripe
-  turbolinks
   twitter
   uglifier (>= 1.3.0)

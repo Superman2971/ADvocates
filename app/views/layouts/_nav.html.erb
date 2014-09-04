@@ -78,9 +78,9 @@
     </div>
   <% end %>
      <%= hidden_field_tag :test, "test" %>
-    Account Email:  <%= f.text_field :email, required:true, :class => "form-control input-lg", placeholder: "Email Here..." %>
+    Account Email:  <%= f.text_field :email, :required => true, :class => "form-control input-lg", placeholder: "Email Here..." %>
     <br />
-    Password: <%= f.password_field :password, required:true, :class => "form-control input-lg", placeholder: "Password Here..." %>
+    Password: <%= f.password_field :password, :required => true, :class => "form-control input-lg", placeholder: "Password Here..." %>
     <%= f.submit "Log in", :class => 'startbuttons' %>
   <% end %>
       </div>
@@ -102,19 +102,19 @@
           <%= form_for business_new do |f| %>
       <div class="field">
         <%= f.label :name %><br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, :required => true %>
       </div>
       <div class="field">
         <%= f.label :email %><br>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
       </div>
       <div class="field">
         <%= f.label :password %><br>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, :required => true %>
       </div>
       <div class="field">
         <%= f.label :password_confirmation %><br>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, :required => true %>
       </div>
       <br>
       <div class="actions">

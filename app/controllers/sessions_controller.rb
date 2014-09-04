@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
         session[:business_id] = @business.id.to_s
         redirect_to business_path(@business.id)
       else 
+        flash[:notice] = "Email and/or Password did not match our database"
         redirect_to root_path
       end 
     else

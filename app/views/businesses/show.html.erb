@@ -50,52 +50,30 @@
       <div class="tab-pane active" id="newcamp">
         <!-- new campaigns begin -->
         <%= form_for(campaign_new) do |f| %>
-        <% if campaign_new.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-          <ul>
-            <% campaign_new.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-        <% end %>
-          <% if campaign_new.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-              <ul>
-              <% campaign_new.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
 
           <div class="field">
             <%= f.label 'Name to reference this post by' %><br>
-            <%= f.text_field :name, :class => "form-control" %>
+            <%= f.text_field :name, :class => "form-control", :required => true %>
           </div>
           <div class="field">
             <%= f.label 'Input text for the post (up to 140 characters)' %><br>
-            <%= f.text_field :status, :class => "form-control" %>
+            <%= f.text_field :status, :class => "form-control", :required => true %>
           </div>
           <div class="field">
             <%= f.label 'Input Image' %><br>
-          <%= f.file_field :avatar || "/public/imgs/cat.jpg", :class => "form-control" %>
+          <%= f.file_field :avatar || "/public/imgs/cat.jpg", :class => "form-control", :required => true %>
           </div>
           <div class="field">
             <%= f.label 'Preferred ADvocate Location' %><br>
-            <%= f.text_field :location, placeholder: "ex. Los Angeles, CA", :class => "form-control" %>
+            <%= f.text_field :location, placeholder: "ex. Los Angeles, CA", :class => "form-control", :required => true %>
           </div>
           <div class="field">
             <%= f.label 'Minimum ADvocate Followers' %><br>
-            <%= f.number_field :followers, :class => "form-control" %>
+            <%= f.number_field :followers, :class => "form-control", :required => true %>
           </div>
           <div class="field">
             <%= f.label 'Tweets' %><br>
-            <%= f.number_field :tweets, :class => "form-control" %>
+            <%= f.number_field :tweets, :class => "form-control", :required => true %>
           </div>
 
             <%= f.hidden_field :business_id, value: @business.id %>
