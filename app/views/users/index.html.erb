@@ -3,14 +3,13 @@
 		<div class="user-atts"><%= current_user.name %></div>
 		<div class="user-atts">Tweets: <%= current_user.followers %></div>
 		<div class="user-atts">Followers: <%= current_user.tweets %></div>
+		<div class="user-atts">Posted Tweets: <%= current_user.tweet_count %></div>
 	</div>
 
 	<div class="scrollcontainer">
 		<div class="twitcontainer">
 			<% @campaigns.each do |c| %>
 			<% if (c.followers <= current_user.followers) && (c.location == current_user.location) && (c.tweets > 0) %>
-				<% c.campaign_users.each do |x| %>
-					<% if x.user_id != current_user.id %>
 
 				<div class="twitcontent">
 
@@ -42,8 +41,6 @@
 						</div>
 					</div>
 				</div>
-									<% end %>
-				<% end %>
 			<% end %>
 			<% end %>
 
