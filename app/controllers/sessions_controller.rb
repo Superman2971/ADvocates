@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       omniauth = env["omniauth.auth"] 
       user = User.find_or_create_with_omniauth(omniauth)
       session[:user_id] = user.id
-      redirect_to user_path(user.id), notice: "Signed in!"
+      redirect_to users_path, notice: "Signed in!"
     end
   end
 
