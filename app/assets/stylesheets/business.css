@@ -34,3 +34,14 @@
 	width: 150px;
 	padding: 10px;
 }
+
+.campaigntweets {
+	width: 48px;
+	height: 48px;
+	float: left;
+	margin-left: 18px;
+	margin-right: -6px;
+	font-family: "HelveticaNeue-Light";
+	font-weight: bold;
+	font-size: 60px;
+}

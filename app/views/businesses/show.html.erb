@@ -6,8 +6,8 @@
       <% @business.campaigns.each do |c| %>
         <div class="twitcontent">
 
-          <div class="twitprofile">
-            <%= image_tag "avatar.png", :class=>"twitprofilepic" %>
+          <div class="campaigntweets">
+            <%= c.tweets %>
           </div>
           <div class="twitright">
             <div class="campaignname">
