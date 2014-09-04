@@ -1,17 +1,43 @@
-<%= current_user.screen_name %>
-<%= current_user.description %>
-<%= current_user.tweets %>
-<span>Tweets</span>
+<div class="scrollcontainer">
+	<div class="twitcontainer">
+		<% @campaigns.each do |c| %>
+			<div class="twitcontent">
 
-<%= current_user.followers %>
-<span>Followers</span>
-<h1>
-<%= current_user.friends %>
+				<div class="twitprofile">
+					<%= image_tag current_user.image, :class=>"twitprofilepic" %>
+				</div>
+				<div class="twitright">
+					<div class="campaignname">
+						<%= c.name %>
+					</div>
+					<div class="twitname">
+						<%= current_user.name %>
+					</div>
+					<div class="twitscreenname">
+						  &nbsp @<%= current_user.screen_name %>
+					</div>
 
-  <% @campaigns.each do |c| %>
-  <%= c.business.name %>
-  <%= c.name %>
-  <%= image_tag c.avatar.url(:medium) %>
-  <%= button_to 'Post to Twitter', post_path(current_user, :status => c.status, :img => c.avatar.url(:medium), :campaign => c.id ), data: {confirm: 'Are you sure you want to post this ad?'} %>
-  <% end %>
-</h1>
+					<div class="status">
+						<%= c.status %>
+					</div>
+					<div class="twitstatusimg">
+						<%= image_tag(c.avatar.url(:original), :class => "statusimg") %>
+					</div>
+					<div class="promotedby">
+						Promoted by <%= c.business.name %>
+					</div>
+					<div class="twitbutton">
+				  		<%= button_to 'Post to Twitter', post_path(current_user, :status => c.status, :img => c.avatar.url(:medium), :campaign => c.id ), data: {confirm: 'Are you sure you want to post this ad?'}, :class => "usertwitbutton" %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+
+	</div>
+</div>
+
+<style>
+body {
+	background-color: #8fc0db;
+}
+</style>
