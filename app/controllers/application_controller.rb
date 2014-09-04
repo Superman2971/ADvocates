@@ -25,6 +25,12 @@ private
 
   helper_method :business_new
 
+  def business_edit
+    @business = Business.find(params[:id])
+  end
+
+  helper_method :business_edit
+
   def campaign_new
     @campaign = Campaign.new
   end

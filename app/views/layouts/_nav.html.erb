@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,8 +45,7 @@
             <% else %>
             <li><a><%= link_to 'Logout', session_path, method: :delete if current_business%></a></li>
             <li class="divider"></li>
-            <li><a><%= link_to 'Edit Profile', edit_business_path(current_business.id), method: :get if current_business%></a></li>
-            <li class="divider"></li>
+            <li class="navbar-text pointer" data-toggle="modal" data-target="#buseditModal"><a href="#">Edit Profile</a></li>
             <li><a><%= link_to 'Delete Profile', business_path(current_business.id), method: :delete if current_business%></a></li>
             <% end %>
           </ul>
@@ -81,7 +81,7 @@
     Account Email:  <%= f.text_field :email, :required => true, :class => "form-control input-lg", placeholder: "Email Here..." %>
     <br />
     Password: <%= f.password_field :password, :required => true, :class => "form-control input-lg", placeholder: "Password Here..." %>
-    <%= f.submit "Log in", :class => 'startbuttons' %>
+    <%= f.submit "Log in", :class => "redbutton" %>
   <% end %>
       </div>
       <div class="modal-footer">
@@ -102,23 +102,23 @@
           <%= form_for business_new do |f| %>
       <div class="field">
         <%= f.label :name %><br>
-        <%= f.text_field :name, :required => true %>
+        <%= f.text_field :name, :required => true, :class => "form-control input-lg" %>
       </div>
       <div class="field">
         <%= f.label :email %><br>
-        <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+        <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :class => "form-control input-lg" %>
       </div>
       <div class="field">
         <%= f.label :password %><br>
-        <%= f.password_field :password, :required => true %>
+        <%= f.password_field :password, :required => true, :class => "form-control input-lg" %>
       </div>
       <div class="field">
         <%= f.label :password_confirmation %><br>
-        <%= f.password_field :password_confirmation, :required => true %>
+        <%= f.password_field :password_confirmation, :required => true, :class => "form-control input-lg" %>
       </div>
       <br>
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Sign up", :class => "redbutton" %>
       </div>
     <% end %>
       </div>
@@ -127,3 +127,51 @@
     </div>
   </div>
 </div>
+
+<% if current_business %>
+<!-- Sign up Modal -->
+<div class="modal fade" id="buseditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" tabindex="-1"  data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(business_edit) do |f| %>
+        <% if business_edit.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(business_edit.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+          <ul>
+            <% business_edit.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :name %><br>
+          <%= f.text_field :name, :class => "form-control input-lg" %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br>
+          <%= f.text_field :email, :class => "form-control input-lg" %>
+        </div>
+        <div class="field">
+          <%= f.label :password %><br>
+          <%= f.password_field :password, :class => "form-control input-lg" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Update", :class => "redbutton" %>
+        </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>

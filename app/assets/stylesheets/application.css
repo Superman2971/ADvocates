@@ -17,4 +17,17 @@
 @import 'bootstrap';
 @import 'bootstrap/glyphicons';
 
+.redbutton {
+	margin-top: 10px;
+	background-color: #be1831;
+	border-style: none;
+	color: white;
+	font-family: "HelveticaNeue-Light";
+	font-weight: 500;
+	width: 150px;
+	padding: 10px;
+}
 
+.redbutton:hover {
+	background-color: #720e1d;
+}
