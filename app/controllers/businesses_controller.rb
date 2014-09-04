@@ -19,7 +19,7 @@ class BusinessesController < ApplicationController
       session[:business_id] = @business.id.to_s
       redirect_to business_path(@business.id)
     else
-      render 'new'
+      redirect_to root_path
     end
   end
 

@@ -1,7 +1,6 @@
 <div class="buscontainer">
-  <h1>Unused Tweets: <%= @business.tweets %></h1>
+  <!-- <h1>Unused Tweets: <%= @business.tweets %></h1> -->
   <h1><%= @business.name %> Campaigns</h1>
-  <h1>Test</h1>
   <div class="busscrollcontainer">
     <div class="twitcontainer">
       <% @business.campaigns.each do |c| %>
@@ -25,7 +24,7 @@
               <%= c.status %>
             </div>
             <div class="twitstatusimg">
-              <%= image_tag(c.avatar.url(:large), :class => "statusimg") %>
+              <%= image_tag(c.avatar.url(:original), :class => "statusimg") %>
             </div>
             <div class="promotedby">
               Promoted by <%= c.business.name %>
