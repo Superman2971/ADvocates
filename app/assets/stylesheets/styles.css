@@ -24,8 +24,8 @@
 }
 
 .parallax-layer-nav {
-	-webkit-transform: translateZ(201px) scale(.6);
-	transform: translateZ(201px) sclae(.6);
+	-webkit-transform: translateZ(201px) scale(.5);
+	transform: translateZ(201px) sclae(.5);
 }
 
 
@@ -97,7 +97,7 @@ z-index: 3;
 z-index: 4;
 }
 #building-level .parallax-layer-4 {
-	background-color: #99cc99;
+	background-color: #7fcf78;
 }
 
 #underground-level {
@@ -113,7 +113,7 @@ z-index: 5;
 	height: 80px;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top : 20px;
+	margin-top : -10px;
 	border-bottom: 1px solid #7399BF;
 }
 .navbar-grass {
@@ -122,7 +122,7 @@ z-index: 5;
 	margin-right: auto;
 	margin-left: auto;
 	border-bottom: 1px solid #5F9B5A;
-	margin-top: -400px;
+	margin-top: -540px;
 }
 
 .navbar-clouds {
@@ -131,7 +131,7 @@ z-index: 5;
 	margin-right: auto;
 	margin-left: auto;
 	border-bottom: 1px solid #BFB686;
-	margin-top: 20px;
+	margin-top: -10px;
 }
 
 .navbar-ug {
@@ -140,7 +140,7 @@ z-index: 5;
 	margin-right: auto;
 	margin-left: auto;
 	border-bottom: 1px solid #998458;
-	margin-top: 0px;
+	margin-top: -70px;
 }
 
 .logo {
@@ -259,7 +259,7 @@ z-index: 5;
 .grass {
 	background-image: url("lightgrass.png");
 	height: 500px;
-	margin-top: -450px;
+	margin-top: -480px;
 	background-repeat: repeat-x;
 	width: 100%;
 	z-index: 9;
