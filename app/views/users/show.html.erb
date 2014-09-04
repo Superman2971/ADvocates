@@ -44,7 +44,7 @@
   <h1>CAMPAIGN POSTS</h1>
   <% @campaigns.each do |c| %>
   <div>
-    <% if (c.followers <= @user.followers) && (c.location == @user.location) && (c.tweets > 0) %>
+    <% if (c.followers <= current_user.followers) && (c.location == current_user.location) && (c.tweets > 0) %>
     <div class="col-md-4 col-sm-6">
       <div class="post_container">
         <header>
