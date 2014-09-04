@@ -1,0 +1,36 @@
+.ticker {
+  height: 50px;
+  margin: auto 15px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  font-size: 25px;
+  vertical-align: center;
+}
+.ticker_post {
+  display: inline-block;
+  position: relative;
+  -webkit-animation: ticker 10s linear infinite;
+  -moz-animation: ticker 10s linear infinite;
+  -ms-animation: ticker 10s linear infinite;
+    animation: ticker 10s linear infinite;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes ticker {
+    from {left: 0;}
+    to {left: -1600px;}
+}
+/* Standard syntax */
+@keyframes ticker {
+    from {left: 0;}
+    to {left: -1600px;}
+}
+/* Firefox */
+@-moz-keyframes ticker {
+    from {left: 0;}
+    to {left: -1600px;}
+}
+/* Internet Explorer */
+@-ms-keyframes ticker {
+    from {left: 0;}
+    to {left: -1600px;}
+}

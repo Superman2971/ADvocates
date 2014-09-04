@@ -140,42 +140,35 @@ body, html {
         <div class="businesslogin btn" data-toggle="modal" data-target="#loginModal"><span class="loginbutton"><a>business log in</a></span></div>
         <div class="userlogin btn"><span class="loginbutton"><%= link_to "user log in", "auth/twitter", :class => "loginbutton" %></span></div>
       </div>
-
-<div>
- <%= form_for business_new do |f| %>
-
-
-        <% flash.each do |k,v| %>
-          <div class="col-md-12 alert alert-danger" role="alert">
-            <%= v %>
-          </div>
-        <% end %>
-
-
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name, :required => true %>
-    </div>
-    <div class="field">
-      <%= f.label :email %><br>
-      <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br>
-      <%= f.password_field :password, :required => true %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation %><br>
-      <%= f.password_field :password_confirmation, :required => true %>
-    </div>
-    <br>
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %> 
-</div>
-
-
+  <div>
+   <%= form_for business_new do |f| %>
+      <% flash.each do |k,v| %>
+        <div class="col-md-12 alert alert-danger" role="alert">
+          <%= v %>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, :required => true %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br>
+        <%= f.password_field :password, :required => true %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation, :required => true %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %> 
+  </div>
 
     </div>
     <div class="parallax-layer parallax-layer-4">
@@ -184,6 +177,14 @@ body, html {
         <div class="piperight"></div>
         <div class="pipecenter"></div>
       </div>
+    </div>
+  </div>
+
+  <!-- Ticker Feed for bottom of Homepage using our own API json -->
+  <div class="ticker">
+    <div class="ticker_post" ng-repeat="campaign in campaigns">
+      {{ campaign.name }} says: {{ campaign.status }} 
+      &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
     </div>
   </div>
 </div>
