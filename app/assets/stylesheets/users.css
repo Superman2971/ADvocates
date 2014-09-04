@@ -10,10 +10,14 @@
 	padding: 10px;
 }
 
-.user-name {
+.user-atts {
 	font-family: "HelveticaNeue-Light";
 	font-weight: bold;
 	font-size: 16px;
+	text-align: center;
+	padding: 10px;
+	width: 100%;
+	border-bottom: 1px solid #e1e8ed;
 }
 
 .userindex-container {

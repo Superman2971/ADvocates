@@ -1,5 +1,10 @@
 .bustabcontainer {
-	float: right;
+	float: left;
+	margin-left: 20px;
+	width: 300px;
+	border-radius: 5px;
+	background-color: white;
+	padding: 10px;
 }
 
 .campaigns-container {
@@ -11,4 +16,22 @@
 	margin-right: auto;
 	margin-left: auto;
 	width: 1200px;
+}
+
+.busscrollcontainer {
+	overflow: scroll;
+	width: 650px;
+	height: 100vh;
+	padding-left: 20px;
+	float: left;
+}
+
+.busbutton {
+	background-color: #be1831;
+	border-style: none;
+	color: white;
+	font-family: "HelveticaNeue-Light";
+	font-weight: 500;
+	width: 150px;
+	padding: 10px;
 }

@@ -2,34 +2,39 @@
   <h1>Unused Tweets: <%= @business.tweets %></h1>
   <h1><%= @business.name %> Campaigns</h1>
   <h1>Test</h1>
-  <div class="campaigns-container">
-    <div class="row">
+  <div class="busscrollcontainer">
+    <div class="twitcontainer">
       <% @business.campaigns.each do |c| %>
-      <div class="col-md-4 col-sm-6">
-        <div class="post_container">
-          <header>
-            <div class="bio">
-              <%= image_tag c.avatar.url(:medium), :class=>"bg" %>
-              <div class="desc">
-                <h3><%= link_to 'Edit', edit_campaign_path(c) %></h3>
-                <p>Make edits to your campaign post</p>
-              </div>
+        <div class="twitcontent">
+
+          <div class="twitprofile">
+            <%= image_tag "avatar.png", :class=>"twitprofilepic" %>
+          </div>
+          <div class="twitright">
+            <div class="campaignname">
+              <%= c.name %>
             </div>
-          </header>
-          <div class="content">
-              <div>
-                <h3><%= c.name %></h3>
-                <h3>Tweets: <%= c.tweets %></h3>
-                <p ng-model="status"><%= c.status %></p>
-              </div>
-            <div><a href="https://twitter.com/intent/tweet?text=<%=c.status%> #ADvocates" class="twitter-hashtag-button" data-size="large" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=680px,height=265px');return false;"></a></div>
+            <div class="twitname">
+              Example
+            </div>
+            <div class="twitscreenname">
+                &nbsp @example
+            </div>
+
+            <div class="status">
+              <%= c.status %>
+            </div>
+            <div class="twitstatusimg">
+              <%= image_tag(c.avatar.url(:large), :class => "statusimg") %>
+            </div>
+            <div class="promotedby">
+              Promoted by <%= c.business.name %>
+            </div>
           </div>
         </div>
-      </div>
-      <% end %>
-    </div>
+        <% end %>
   </div>
-
+</div>
 
   <div class="bustabcontainer">
   <!-- Business nav tabs -->
@@ -68,27 +73,27 @@
 
           <div class="field">
             <%= f.label 'Name to reference this post by' %><br>
-            <%= f.text_field :name %>
+            <%= f.text_field :name, :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label 'Input text for the post (up to 140 characters)' %><br>
-            <%= f.text_field :status %>
+            <%= f.text_field :status, :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label 'Input Image' %><br>
-          <%= f.file_field :avatar || "/public/imgs/cat.jpg" %>
+          <%= f.file_field :avatar || "/public/imgs/cat.jpg", :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label 'Preferred ADvocate Location' %><br>
-            <%= f.text_field :location, placeholder: "ex. Los Angeles, CA" %>
+            <%= f.text_field :location, placeholder: "ex. Los Angeles, CA", :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label 'Minimum ADvocate Followers' %><br>
-            <%= f.number_field :followers %>
+            <%= f.number_field :followers, :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label 'Tweets' %><br>
-            <%= f.number_field :tweets %>
+            <%= f.number_field :tweets, :class => "form-control" %>
           </div>
 
             <%= f.hidden_field :business_id, value: @business.id %>
@@ -96,7 +101,7 @@
 
           <br>
           <div class="actions">
-            <%= f.submit %>
+            <%= f.submit "Create Campaign", :class => "busbutton" %>
           </div>
         <% end %>
         <!-- new campaign end -->
@@ -146,3 +151,8 @@
     </div>
   </div>
 </div>
+<style>
+body {
+  background-color: #8fc0db;
+}
+</style>

@@ -1,6 +1,8 @@
 <div class="userindex-container">
 	<div class="usercontainer">
-		<div class="user-name"><%= current_user.name %></div>
+		<div class="user-atts"><%= current_user.name %></div>
+		<div class="user-atts">Tweets: <%= current_user.followers %></div>
+		<div class="user-atts">Followers: <%= current_user.tweets %></div>
 	</div>
 
 	<div class="scrollcontainer">
