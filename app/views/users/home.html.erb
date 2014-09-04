@@ -140,6 +140,43 @@ body, html {
         <div class="businesslogin btn" data-toggle="modal" data-target="#loginModal"><span class="loginbutton"><a>business log in</a></span></div>
         <div class="userlogin btn"><span class="loginbutton"><%= link_to "user log in", "auth/twitter", :class => "loginbutton" %></span></div>
       </div>
+
+<div>
+ <%= form_for business_new do |f| %>
+
+
+        <% flash.each do |k,v| %>
+          <div class="col-md-12 alert alert-danger" role="alert">
+            <%= v %>
+          </div>
+        <% end %>
+
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, :required => true %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br>
+      <%= f.password_field :password, :required => true %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation, :required => true %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %> 
+</div>
+
+
+
     </div>
     <div class="parallax-layer parallax-layer-4">
       <div class="pipecontainer">
@@ -173,57 +210,6 @@ body, html {
     Password: <%= f.password_field :password, :required => true, :class => "form-control input-lg", placeholder: "Password Here..." %>
     <%= f.submit "Log in", :class => 'startbuttons' %>
   <% end %>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Sign up Modal -->
-<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" tabindex="-1"  data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-      <%= form_for business_new do |f| %>
-
-        <% if business_new.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@business.errors.count, "error") %> prohibited your login:</h2>
-
-            <ul>
-            <% business_new.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-            </ul>
-          </div>
-        <% end %>
-
-      <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name, :required => true %>
-      </div>
-      <div class="field">
-        <%= f.label :email %><br>
-        <%= f.text_field :email, :required => true %>
-      </div>
-      <div class="field">
-        <%= f.label :password %><br>
-        <%= f.password_field :password, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
-      </div>
-      <div class="field">
-        <%= f.label :password_confirmation %><br>
-        <%= f.password_field :password_confirmation, :required => true %>
-      </div>
-      <br>
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
       </div>
       <div class="modal-footer">
       </div>
