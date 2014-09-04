@@ -1,28 +1,25 @@
-== README
+Welcome to ADvocate.
+http://ad-vocates.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ADvocate is a web-based application that connects local businesses with consumers. Through social media (Twitter), Twitter users can earn money by advertising (tweeting) for businesses. 
 
-Things you may want to cover:
+First, businesses purchase tweets. Then, they create campaigns and allot a certain number of tweets from their purchased tweets to be used in each campaign. 
 
-* Ruby version
+At the same time businesses create campaigns, businesses select the type of user they want to tweet for them based on the user's location and number of followers. 
 
-* System dependencies
+When users log in, they are able to see the campaigns for which they are able to tweet, and select which campaigns they would like to support. 
 
-* Configuration
 
-* Database creation
+System dependencies:
 
-* Database initialization
+* Ruby, AngularJS, PostgreSQL
 
-* How to run the test suite
+* CSS/Parallax (works best) using GoogleChrome
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+

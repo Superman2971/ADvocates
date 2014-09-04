@@ -12,7 +12,7 @@ class Campaign < ActiveRecord::Base
   validate :validate_bus_tweets
 
   def modify_quantity
-		#Find the yogurt this person wants to buy
+		#Find the business this person wants to buy
 		business = Business.find(self.business.id)
 
 		#Logic to modify the quantity 
