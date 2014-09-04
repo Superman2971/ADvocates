@@ -55,3 +55,36 @@
 	margin-left: -10px;
 	text-align: center;
 }
+
+.businesslogin {
+	margin-top: 15px;
+	height: 50px;
+	width: 185;
+	border: 1px solid black;
+	border-radius: 25px;
+	background-color: none;
+	float: right;
+}
+
+.userlogin {
+	margin-top: 15px;
+	height: 50px;
+	width: 140px;
+	border: 1px solid black;
+	border-radius: 25px;
+	background-color: none;
+	margin-right: 20px;
+	float: right;
+}
+
+.loginbutton {
+	font-family: "Helvetica";
+	font-weight: 200;
+	font-size: 25px;
+	float: left;
+}
+
+ .parallax-group a { 
+ 	color: black;
+ 	text-decoration: none;
+ }
