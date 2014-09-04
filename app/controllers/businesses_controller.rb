@@ -32,7 +32,7 @@ class BusinessesController < ApplicationController
     if @business.update(business_params)
       redirect_to business_path(@business.id)
     else
-      render 'edit'
+      render "edit"
     end
   end
 
