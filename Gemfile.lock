@@ -55,6 +55,11 @@ GEM
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.2.1)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     hashie (3.3.1)
@@ -130,6 +135,7 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rmagick (2.13.2)
     rspec-core (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.4)
@@ -204,6 +210,7 @@ DEPENDENCIES
   bootstrap-glyphicons
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
+  factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-twitter (~> 1.0.1)

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# gem 'rmagick', '2.13.2'
+gem 'rmagick', '2.13.2'
 
 gem 'stripe'
 # Paperclip
@@ -43,5 +43,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Add Rspec
 gem 'rspec-rails'
+
+gem 'factory_girl_rails'
 
 gem 'rails_12factor', group: :production

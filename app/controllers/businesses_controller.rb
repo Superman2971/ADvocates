@@ -39,7 +39,7 @@ class BusinessesController < ApplicationController
   def destroy
     Business.find(params[:id]).destroy
     reset_session
-    redirect_to business_path(@business.id)
+    redirect_to root_path
   end
 
   private
