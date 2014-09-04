@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
       config.access_token_secret = token_secret
     end
 
-    file = open("http://upload.wikimedia.org/wikipedia/commons/b/b0/Angles-sur-l'Anglin_2006.jpg")
+    file = open(img)
     client.update_with_media(tweet, file)
   end
 
