@@ -45,3 +45,13 @@
 	font-weight: bold;
 	font-size: 60px;
 }
+
+.campaigntweetsunder {
+	font-family: "HelveticaNeue-Light";
+	font-weight: 300;
+	font-size: 12px;
+	margin-top: -20px;
+	width: 48px;
+	margin-left: -10px;
+	text-align: center;
+}

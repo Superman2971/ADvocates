@@ -1,6 +1,5 @@
 <div class="buscontainer">
-  <!-- <h1>Unused Tweets: <%= @business.tweets %></h1> -->
-  <h1><%= @business.name %> Campaigns</h1>
+  <h1><%= @business.name %> Campaigns / Unused Tweets: <%= @business.tweets %></h1>
   <div class="busscrollcontainer">
     <div class="twitcontainer">
       <% @business.campaigns.each do |c| %>
@@ -8,6 +7,10 @@
 
           <div class="campaigntweets">
             <%= c.tweets %>
+            <div class="campaigntweetsunder">
+              Tweets
+              <p>Left</p>
+            </div>   
           </div>
           <div class="twitright">
             <div class="campaignname">
