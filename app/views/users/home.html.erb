@@ -63,30 +63,30 @@ body, html {
 .ticker_post {
   display: inline-block;
   position: relative;
-  -webkit-animation: ticker 40s linear infinite;
-  -moz-animation: ticker 40s linear infinite;
-  -ms-animation: ticker 40s linear infinite;
-    animation: ticker 40s linear infinite;
+  -webkit-animation: ticker 60s linear infinite;
+  -moz-animation: ticker 60s linear infinite;
+  -ms-animation: ticker 60s linear infinite;
+    animation: ticker 60s linear infinite;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes ticker {
     from {left: 0;}
-    to {left: -6000px;}
+    to {left: -9000px;}
 }
 /* Standard syntax */
 @keyframes ticker {
     from {left: 0;}
-    to {left: -6000px;}
+    to {left: -9000px;}
 }
 /* Firefox */
 @-moz-keyframes ticker {
     from {left: 0;}
-    to {left: -6000px;}
+    to {left: -9000px;}
 }
 /* Internet Explorer */
 @-ms-keyframes ticker {
     from {left: 0;}
-    to {left: -6000px;}
+    to {left: -9000px;}
 }
 </style>
 <div class="parallax">
@@ -219,8 +219,9 @@ body, html {
   <!-- Ticker Feed for bottom of Homepage using our own API json -->
   <div class="ticker">
     <div class="ticker_post" ng-repeat="campaign in campaigns">
-      {{ campaign.name }} says: {{ campaign.status }} 
-      &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      &nbsp  &nbsp &nbsp &nbsp
+      {{ campaign.status }} 
+      &nbsp &nbsp &nbsp &nbsp
     </div>
   </div>
 </div>
