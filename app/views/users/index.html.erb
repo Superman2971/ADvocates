@@ -8,6 +8,10 @@
 	<div class="scrollcontainer">
 		<div class="twitcontainer">
 			<% @campaigns.each do |c| %>
+			<% if (c.followers <= current_user.followers) && (c.location == current_user.location) && (c.tweets > 0) %>
+				<% c.campaign_users.each do |x| %>
+					<% if x.user_id != current_user.id %>
+
 				<div class="twitcontent">
 
 					<div class="twitprofile">
@@ -28,7 +32,7 @@
 							<%= c.status %>
 						</div>
 						<div class="twitstatusimg">
-							<%= image_tag(c.avatar.url(:large), :class => "statusimg") %>
+							<%= image_tag(c.avatar.url(:original), :class => "statusimg") %>
 						</div>
 						<div class="promotedby">
 							Promoted by <%= c.business.name %>
@@ -38,6 +42,9 @@
 						</div>
 					</div>
 				</div>
+									<% end %>
+				<% end %>
+			<% end %>
 			<% end %>
 
 		</div>

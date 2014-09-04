@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
     user.token = auth[:credentials][:token]
     user.token_secret = auth[:credentials][:secret]
     user.screen_name = auth[:extra][:raw_info][:screen_name]
+    user.tweet_count = 0
  		user.save!
  	end
  end
@@ -64,7 +65,7 @@ class User < ActiveRecord::Base
       config.access_token_secret = token_secret
     end
 
-    file = open(img)
+    file = open("http://upload.wikimedia.org/wikipedia/commons/b/b0/Angles-sur-l'Anglin_2006.jpg")
     client.update_with_media(tweet, file)
   end
 

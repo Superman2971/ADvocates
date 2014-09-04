@@ -78,7 +78,7 @@
     </div>
   <% end %>
      <%= hidden_field_tag :test, "test" %>
-    Username:  <%= f.text_field :name, required:true, :class => "form-control input-lg", placeholder: "Name Here..." %>
+    Account Email:  <%= f.text_field :email, required:true, :class => "form-control input-lg", placeholder: "Email Here..." %>
     <br />
     Password: <%= f.password_field :password, required:true, :class => "form-control input-lg", placeholder: "Password Here..." %>
     <%= f.submit "Log in", :class => 'startbuttons' %>

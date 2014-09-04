@@ -37,9 +37,10 @@ class BusinessesController < ApplicationController
   end
 
   def destroy
+    Business.find(params[:id]).campaigns.destroy_all
     Business.find(params[:id]).destroy
     reset_session
-    redirect_to business_path(@business.id)
+    redirect_to root_path
   end
 
   private

@@ -22,13 +22,10 @@ class UsersController < ApplicationController
     current_user.imgtweet(params[:status], params[:img])
     # Create campaign_user to add foreign keys to connect campaign and user
     CampaignUser.create(user_id:current_user.id,campaign_id:params[:campaign])
-    # Subtract a Tweet as payment from the Business
-    # @business = current_user.campaigns.last.business
-    # puts "THESE THINGS"
-    # puts @business
-    # puts @business.tweets
-    # @business.update(tweets: (@business.tweets-1))
-    # puts @business.tweets
+    # Add tweet count to the user
+    current_user.update_attribute(:tweet_count, current_user.tweet_count + 1)
+    # Subtract tweet count from the campaign
+    current_user.campaigns.last.update_attribute(:tweets, current_user.campaigns.last.tweets - 1)
     redirect_to users_path
   end
 
