@@ -1,0 +1,23 @@
+<h1>BUSINESS INDEX</h1>
+<h1>Test</h1>
+  <tbody>
+    <% @businesses.each do |b| %>
+      <tr>
+        <td><%= b.name %></td>
+        <td><%= link_to 'Show', b %></td>
+        <td>
+      </tr>
+      <br>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>{{test}}</h3>
+<ul>
+  <li ng-repeat="campaign in campaigns">
+    {{ campaign.id }}
+    {{ campaign.name }}
+    {{ campaign.status }}
+    {{ campaign.avatar_file_name }}
+  </li>
+</ul>
