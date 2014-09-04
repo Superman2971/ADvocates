@@ -27,7 +27,9 @@
               <%= c.status %>
             </div>
             <div class="twitstatusimg">
+              <% if c.avatar.url != "/avatars/original/missing.png" %>
               <%= image_tag(c.avatar.url(:original), :class => "statusimg") %>
+              <% end %>
             </div>
             <div class="promotedby">
               Promoted by <%= c.business.name %>
@@ -61,7 +63,7 @@
           </div>
           <div class="field">
             <%= f.label 'Input Image' %><br>
-          <%= f.file_field :avatar || "/public/imgs/cat.jpg", :class => "form-control", :required => true %>
+          <%= f.file_field :avatar, :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label 'Preferred ADvocate Location' %><br>

@@ -31,7 +31,9 @@
 							<%= c.status %>
 						</div>
 						<div class="twitstatusimg">
+							<% if c.avatar.url != "/avatars/original/missing.png" %>
 							<%= image_tag(c.avatar.url(:original), :class => "statusimg") %>
+							<% end %>
 						</div>
 						<div class="promotedby">
 							Promoted by <%= c.business.name %>
