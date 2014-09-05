@@ -12,7 +12,7 @@
       <% if !current_user && !current_business %>
         <%= link_to "ADVOCATES", root_path, class:"navbar-brand" %>
       <% elsif current_user %>
-        <%= link_to "ADVOCATES", user_path(current_user.id), class:"navbar-brand" %>
+        <%= link_to "ADVOCATES", users_path, class:"navbar-brand" %>
       <% else %>
         <%= link_to "ADVOCATES", business_path(current_business.id), class:"navbar-brand" %>
       <% end %>
