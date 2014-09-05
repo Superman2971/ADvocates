@@ -1,13 +1,22 @@
 class BusinessesController < ApplicationController
   def index
+    if !current_business
+      redirect_to root_path
+    end
     @businesses = Business.all
   end
 
   def show
+    if !current_business
+      redirect_to root_path
+    end
     @business = Business.find(params[:id])
   end
 
   def new
+    if !current_business
+      redirect_to root_path
+    end
     @business = Business.new
     
   end
@@ -25,10 +34,16 @@ class BusinessesController < ApplicationController
   end
 
   def edit
+    if !current_business
+      redirect_to root_path
+    end
     @business = Business.find(params[:id])
   end
 
   def update
+    if !current_business
+      redirect_to root_path
+    end
     @business = Business.find(params[:id])
     if @business.update(business_params)
       redirect_to business_path(@business.id)
