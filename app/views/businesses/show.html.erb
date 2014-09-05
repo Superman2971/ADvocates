@@ -74,7 +74,7 @@
           <div class="field">
             <%= f.label 'Select ADvocate Location' %><br>
             <% shortlist = User.select(:location).uniq %>
-            <%= collection_select(:location, :user_id, shortlist, :id, :location) %>
+            <%= f.select("location", User.all.collect {|u| u.location }, { include_blank: true }, :required => true) %>
           </div>
           <div class="field">
             <%= f.label 'Minimum ADvocate Followers' %><br>
