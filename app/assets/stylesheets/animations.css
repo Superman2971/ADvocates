@@ -109,7 +109,7 @@
 .lamplight {
   width: 200px;
   height: 200px;
-  left: -2;
+  left: -2px;
   top: 225px;
   background-image: url('lamp.png');
   position: relative;
