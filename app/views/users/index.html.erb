@@ -39,7 +39,7 @@
 							Promoted by <%= c.business.name %>
 						</div>
 						<div class="twitbutton">
-					  		<%= button_to 'Post to Twitter', post_path(current_user, :status => c.status, :img => c.avatar.url(:medium), :campaign => c.id ), data: {confirm: 'Are you sure you want to post this ad?'}, :class => "usertwitbutton" %>
+					  		<%= button_to 'Post to Twitter', post_path(current_user, :status => c.status, :img => c.avatar.url(:original), :campaign => c.id ), data: {confirm: 'Are you sure you want to post this ad?'}, :class => "usertwitbutton" %>
 						</div>
 					</div>
 				</div>
