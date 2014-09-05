@@ -31,3 +31,23 @@
 .redbutton:hover {
 	background-color: #720e1d;
 }
+
+.blackbutton {
+	margin-top: 10px;
+	background-color: black;
+	border-style: none;
+	color: white;
+	font-family: "HelveticaNeue-Light";
+	font-size: 18px;
+	font-weight: 500;
+	width: 150px;
+	padding: 10px;
+	height: 50px;
+	border-radius: 25px;
+	border: 1px solid black;
+}
+
+.blackbutton:hover {
+	background-color: transparent;
+	color: black;
+}

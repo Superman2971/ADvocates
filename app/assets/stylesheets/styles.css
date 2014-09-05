@@ -150,7 +150,7 @@ z-index: 6;
 	margin-right: auto;
 	margin-left: auto;
 	border-bottom: 1px solid #998458;
-	margin-top: -70px;
+	margin-top: -20px;
 }
 
 .logo {
@@ -338,5 +338,18 @@ z-index: 6;
 	background-size: cover;
 }
 
-/*buttons */
-
+/* signup*/
+.signup-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+}
+.bussignup {
+	float: right;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	margin-right: 20px;
+}
