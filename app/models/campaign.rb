@@ -25,4 +25,8 @@ class Campaign < ActiveRecord::Base
  	 	end
 	end
 
+  def after_intialize 
+    business.tweets = 0
+    tweets = 0
+  end
 end
