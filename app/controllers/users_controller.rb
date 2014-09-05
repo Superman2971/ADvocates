@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     # Add tweet count to the user
     current_user.update_attribute(:tweet_count, current_user.tweet_count + 1)
     # Subtract tweet count from the campaign
-    c.update_attribute(:tweets, current_user.campaigns.last.tweets - 1)
+    current_user.campaigns.last.update_attribute(:tweets, current_user.campaigns.last.tweets - 1)
     redirect_to users_path
     end
   end
