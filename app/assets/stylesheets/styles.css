@@ -6,6 +6,7 @@
   overflow-y: auto;
   -webkit-perspective: 500px;
   perspective: 500px;
+  -moz-perspective: 500px;
 }
 
 .parallax-group {
@@ -13,6 +14,7 @@
   height: 600px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
 }
 
 .parallax-layer {
@@ -26,29 +28,32 @@
 .parallax-layer-nav {
 	-webkit-transform: translateZ(201px) scale(.5);
 	transform: translateZ(201px) sclae(.5);
+	-moz-transform: translateZ(201px) sclae(.5);
 }
 
 
 .parallax-layer-1 {
 	-webkit-transform: translateZ(100px) scale(.8);
 	transform: translateZ(100px) sclae(.8);
+	-moz-transform: translateZ(100px) sclae(.8);
 }
 
 .parallax-layer-2 {
 	-webkit-transform: translateZ(200px) scale(.6);
 	transform: translateZ(200px) scale(.6);
+	-moz-transform: translateZ(200px) scale(.6);
 }
 
 .parallax-layer-3 {
 	-webkit-transform: translateZ(300px) scale(.5);
 	transform: translateZ(300px) scale(.5);
-	z-index: 2;
+	-moz-transform: translateZ(300px) scale(.5);
 }
 
 .parallax-layer-4 {
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
-	z-index: 1;
+	-moz-transform: translateZ(0);
 }
 
 body {
@@ -68,6 +73,7 @@ body {
 	top: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
 }
 
 /*ids--highter the zindex, higher priority*/
@@ -97,7 +103,7 @@ z-index: 3;
 z-index: 4;
 }
 #building-level .parallax-layer-4 {
-	background-color: #7fcf78;
+	background-color: #99cc99;
 }
 
 #underground-level {
@@ -284,7 +290,7 @@ z-index: 5;
 }
 
 .leaves {
-	background-image: url("leaves2.png");
+	background-image: url("leaves3.png");
 	width: 850px;
 	height: 500px;
 	margin-left: auto;

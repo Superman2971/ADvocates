@@ -5,10 +5,16 @@
   background-repeat: repeat-x;
   height: 250px;
   width: 100%;
-  -webkit-animation: slide 7s linear infinite; 
+  -webkit-animation: slide 7s linear infinite;
+  animation: slide 7s linear infinite;  
 }
 
 @-webkit-keyframes slide {
+  from { background-position: 0; }
+  to { background-position: 730px; }
+}
+
+@keyframes slide {
   from { background-position: 0; }
   to { background-position: 730px; }
 }
@@ -54,7 +60,7 @@
   background-color: #898989;
   position: relative;
   -webkit-animation: lights2 6s steps(1) infinite; 
-  animation: lights 6s steps(1) infinite;
+  animation: lights2 6s steps(1) infinite;
 }
 
 @-webkit-keyframes lights2 {
@@ -108,7 +114,7 @@
   background-image: url('lamp.png');
   position: relative;
   -webkit-animation: lamp 3s steps(1) infinite; 
-  animation: lights 5s steps(1) infinite;
+  animation: lamp 5s steps(1) infinite;
 }
 
 @-webkit-keyframes lamp {
@@ -140,7 +146,7 @@
     height: 100px;
     width: 100px;
     -webkit-animation: flap 0.2s steps(3) infinite;
-    animation: fly 0.2s steps(3) 0 infinite;
+    animation: flap 0.2s steps(3) 0 infinite;
 }
 
 @-webkit-keyframes flap {
@@ -157,7 +163,7 @@
   height: 100px;
   width: 100px;
   -webkit-animation: fly 5s;
-  animation: fly 5s linear;
+  animation: fly 5s;
   position: relative;
   opacity: 0;
 }
