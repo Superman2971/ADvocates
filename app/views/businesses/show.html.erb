@@ -73,7 +73,8 @@
           </div>
           <div class="field">
             <%= f.label 'Select ADvocate Location' %><br>
-            <%= collection_select(:location, :user_id, User.all, :id, :location) %>
+            <% shortlist = User.select(:location).uniq %>
+            <%= collection_select(:location, :user_id, shortlist, :id, :location) %>
           </div>
           <div class="field">
             <%= f.label 'Minimum ADvocate Followers' %><br>
