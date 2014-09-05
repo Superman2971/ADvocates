@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rmagick', '2.13.2'
 
+gem 'whenever', :require => false
+
 gem 'stripe'
 # Paperclip
 gem "paperclip"

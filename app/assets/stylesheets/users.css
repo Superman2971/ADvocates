@@ -8,6 +8,15 @@
 	border-bottom: 1px solid #e1e8ed;
 }
 
+.useratts2 {
+	font-family: "HelveticaNeue-Light";
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px;
+	width: 100%;
+}
+
 .userindex-container {
 	width: 1000px;
 	margin-left: auto;
@@ -17,9 +26,9 @@
 .usercontainer {
 	background-color: white;
 	width: 200px;
-	height: 200px;
 	float: left;
 	border-radius: 5px;
+	box-shadow: 4px 4px 4px #526E7D;
 }
 
 
@@ -35,6 +44,7 @@
 	width: 588px;
 	background-color: white;
 	border-radius: 5px;
+	box-shadow: 4px 4px 4px #526E7D;
 }
 
 .twitcontent {
@@ -129,4 +139,21 @@
 	font-weight: 500;
 	width: 150px;
 	padding: 10px;
+}
+
+.checkback {
+	width: 600px;
+	background-color: white;
+	border-radius: 5px;
+	float; left
+	height: 30px;
+	box-shadow: 4px 4px 4px #526E7D;
+}
+
+.checktext {
+	padding: 20px;
+	font-family: "HelveticaNeue-Light";
+	font-weight: 300;
+	font-size: 30px;
+	color: black;
 }
