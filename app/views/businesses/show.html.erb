@@ -72,8 +72,8 @@
           <%= f.file_field :avatar, :class => "form-control" %>
           </div>
           <div class="field">
-            <%= f.label 'Preferred ADvocate Location' %><br>
-            <%= f.text_field :location, placeholder: "ex. Los Angeles, CA", :class => "form-control", :required => true %>
+            <%= f.label 'Select ADvocate Location' %><br>
+            <%= collection_select(:location, :user_id, User.all, :id, :location) %>
           </div>
           <div class="field">
             <%= f.label 'Minimum ADvocate Followers' %><br>
