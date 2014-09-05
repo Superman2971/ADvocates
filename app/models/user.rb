@@ -30,7 +30,6 @@ class User < ActiveRecord::Base
     user.token = auth[:credentials][:token]
     user.token_secret = auth[:credentials][:secret]
     user.screen_name = auth[:extra][:raw_info][:screen_name]
-    user.tweet_count = 0
  		user.save!
  	end
  end
@@ -43,6 +42,7 @@ class User < ActiveRecord::Base
   self.friends = auth[:extra][:raw_info][:friends_count]
   self.background_image = auth[:extra][:raw_info][:profile_banner_url] || "http://placehold.it/794x397"
   self.tweets = auth[:extra][:raw_info][:statuses_count]
+    self.tweet_count = 0
  	self.save!
  	self
  end
