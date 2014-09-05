@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def post
-    if (params[:img] != "/avatars/original/missing.png")
+    if (params[:img] == "/avatars/original/missing.png")
     current_user.singletweet(params[:status])
     # Create campaign_user to add foreign keys to connect campaign and user
     CampaignUser.create(user_id:current_user.id,campaign_id:params[:campaign])
