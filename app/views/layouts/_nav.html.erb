@@ -139,16 +139,11 @@
       </div>
       <div class="modal-body">
         <%= form_for(business_edit) do |f| %>
-        <% if business_edit.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(business_edit.errors.count, "error") %> prohibited this business from being saved:</h2>
 
-          <ul>
-            <% business_edit.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
+        <% flash.each do |k,v| %>
+          <div class="col-md-12 alert alert-danger" role="alert">
+            <%= v %>
+          </div>
         <% end %>
 
         <div class="field">

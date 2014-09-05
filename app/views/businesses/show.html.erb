@@ -53,6 +53,12 @@
         <!-- new campaigns begin -->
         <%= form_for(campaign_new) do |f| %>
 
+          <% flash.each do |k,v| %>
+            <div class="col-md-12 alert alert-danger" role="alert">
+              <%= v %>
+            </div>
+          <% end %>
+
           <div class="field">
             <%= f.label 'Name to reference this post by' %><br>
             <%= f.text_field :name, :class => "form-control", :required => true %>

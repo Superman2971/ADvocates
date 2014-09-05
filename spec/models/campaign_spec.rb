@@ -3,7 +3,10 @@ require "rails_helper"
 
 
 describe Campaign do
-  it "is valid with a name, business_id, status, location, followers, and avatar" do
+  before do
+    business = FactoryGirl.build(:business)
+  end
+  it "is valid with a name, business_id, status, location, followers, tweets, and avatar" do
     campaign = FactoryGirl.build(:campaign)
     expect(campaign).to be_valid
   end
@@ -15,6 +18,11 @@ describe Campaign do
 
   it "is not valid without business_id" do
     campaign = FactoryGirl.build(:campaign, business_id: nil)
+    expect(campaign).to be_invalid
+  end
+
+  it "is invalid without tweets" do
+    campaign = FactoryGirl.build(:campaign, tweets: nil)
     expect(campaign).to be_invalid
   end
 
