@@ -1,0 +1,223 @@
+<style>
+body, html {
+  overflow: hidden;
+}
+.parallax-group a { 
+  color: black;
+  text-decoration: none;
+}
+.parallax-group a:hover { 
+  color: white;
+  text-decoration: none;
+}
+.businesslogin {
+  margin-top: 15px;
+  height: 40px;
+  width: 185;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: none;
+  float: right;
+}
+
+.businesslogin:hover {
+  border-radius: 20px;
+  background-color: black;
+}
+
+.userlogin {
+  margin-top: 15px;
+  height: 40px;
+  width: 120px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: none;
+  margin-right: 20px;
+  float: right;
+}
+
+.userlogin:hover {
+  border-radius: 20px;
+  background-color: black;
+}
+
+.loginbutton {
+  font-family: "Helvetica";
+  font-weight: 200;
+  font-size: 20px;
+  float: left;
+}
+
+.loginbutton:hover {
+  color: white;
+  font-color: white;
+}
+</style>
+<div class="parallax">
+  <!-- video/billboard level -->
+  <div id="video-level" class="parallax-group">
+    <div class="parallax-layer parallax-layer-nav">
+      <div class="navbar-billboard">
+        <div class="logo"></div>
+        <div class="businesslogin btn" data-toggle="modal" data-target="#loginModal"><span class="loginbutton"><a>business log in</a></span></div>
+        <div class="userlogin btn"><span class="loginbutton"><%= link_to "user log in", "auth/twitter", :class => "loginbutton" %></span></div>
+      </div>
+    </div>
+    <div class="parallax-layer parallax-layer-4">
+      <div class="birdmove">
+        <div class="twitterbird"></div>
+      </div>
+    </div>
+    <div class="parallax-layer parallax-layer-1">
+        <div class="billboard"></div>
+    </div>
+  </div>
+  <!-- clouds level -->
+  <div id="clouds-level" class="parallax-group">
+    <div class="parallax-layer parallax-layer-nav">
+      <div class="navbar-clouds">
+        <div class="logo"></div>
+        <div class="businesslogin btn" data-toggle="modal" data-target="#loginModal"><span class="loginbutton"><a>business log in</a></span></div>
+        <div class="userlogin btn"><span class="loginbutton"><%= link_to "user log in", "auth/twitter", :class => "loginbutton" %></span></div>
+      </div>
+    </div>
+    <div class="parallax-layer parallax-layer-3">
+      <div class="cloud4"></div>
+      <div class="cloud5"></div>
+      <div class="cloud6"></div>
+    </div>
+    <div class="parallax-layer parallax-layer-2">
+      <div class="cloud"></div>
+      <div class="cloud2"></div>
+      <div class="cloud3"></div>
+    </div>
+    <div class="parallax-layer parallax-layer-4">
+      <div class="backgroundcloud"></div>
+    </div>
+  </div>
+  <!-- city building level -->
+  <div id="city-level" class="parallax-group">
+    <div class="parallax-layer parallax-layer-2">
+      <div class="citybg">
+        <div class="buildinglights"></div>
+        <div class="buildinglights2"></div>
+        <div class="buildinglights3"></div>
+      </div>
+    </div>
+    <div class="parallax-layer parallax-layer-1">
+      <div class="citybgnorm"></div>
+    </div>
+    <div class="parallax-layer parallax-layer-4">
+      <div class="citybglight"></div>
+    </div>
+  </div>
+  <!-- grass/local business building level -->
+  <div id="building-level" class="parallax-group">
+    <div class="parallax-layer parallax-layer-nav">
+      <div class="navbar-grass">
+        <div class="logo"></div>
+        <div class="businesslogin btn" data-toggle="modal" data-target="#loginModal"><span class="loginbutton"><a>business log in</a></span></div>
+        <div class="userlogin btn"><span class="loginbutton"><%= link_to "user log in", "auth/twitter", :class => "loginbutton" %></span></div>
+      </div>
+    </div>
+    <div class="parallax-layer parallax-layer-4">
+      <div class="darkgrass"></div>
+    </div>
+    <div class="parallax-layer parallax-layer-1">
+      <div class="grass"></div>
+      <div class="localbusiness">
+        <div class="lamplight"></div>
+      </div>
+    </div>
+    <div class="parallax-layer parallax-layer-2">
+      <div class="leaves"></div>
+    </div>
+  </div>
+  <div id="underground-level" class="parallax-group">
+    <div class="parallax-layer parallax-layer-nav">
+      <div class="navbar-ug">
+        <div class="logo"></div>
+        <div class="businesslogin btn" data-toggle="modal" data-target="#loginModal"><span class="loginbutton"><a>business log in</a></span></div>
+        <div class="userlogin btn"><span class="loginbutton"><%= link_to "user log in", "auth/twitter", :class => "loginbutton" %></span></div>
+      </div>
+  <div>
+   <%= form_for business_new do |f| %>
+      <% flash.each do |k,v| %>
+        <div class="col-md-12 alert alert-danger" role="alert">
+          <%= v %>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, :required => true %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br>
+        <%= f.password_field :password, :required => true %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation, :required => true %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %> 
+  </div>
+
+    </div>
+    <div class="parallax-layer parallax-layer-4">
+      <div class="pipecontainer">
+        <div class="pipeleft"></div>
+        <div class="piperight"></div>
+        <div class="pipecenter"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticker Feed for bottom of Homepage using our own API json -->
+  <div class="ticker">
+    <div class="ticker_post" ng-repeat="campaign in campaigns">
+      {{ campaign.name }} says: {{ campaign.status }} 
+      &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    </div>
+  </div>
+</div>
+
+
+<!-- Log in Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" tabindex="-1"  data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+    <%= form_for business_new, url: session_path do |f| %>
+      <% flash.each do |k,v| %>
+        <div class="col-md-12 alert alert-danger" role="alert">
+          <%= v %>
+        </div>
+      <% end %>
+    <%= hidden_field_tag :test, "test" %>
+    Account Email:  <%= f.text_field :email, :required => true, :class => "form-control input-lg", placeholder: "Email Here..." %>
+    <br />
+    Password: <%= f.password_field :password, :required => true, :class => "form-control input-lg", placeholder: "Password Here..." %>
+    <%= f.submit "Log in", :class => 'startbuttons' %>
+  <% end %>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+<<<<<<< HEAD
+</div>
+=======
+</div>
+>>>>>>> 2a29c688902a412987ee322edd9ffdb39e5b38af
