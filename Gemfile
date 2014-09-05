@@ -43,6 +43,8 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'unicorn'
+
 # Add Rspec
 gem 'rspec-rails'
 
@@ -54,3 +56,5 @@ gem 'active_model_serializers' # Allows you to customize the JSON output, essent
 gem 'factory_girl_rails'
 
 gem 'rails_12factor', group: :production
+
+ruby "2.1.2"
