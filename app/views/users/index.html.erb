@@ -1,12 +1,14 @@
-<div class="userindexcontainer">
+<div class="userindex-container">
 	<div class="usercontainer">
 		<div class="useratts"><%= current_user.name %></div>
 		<div class="useratts">Tweets: <%= current_user.followers %></div>
 		<div class="useratts">Followers: <%= current_user.tweets %></div>
 		<div class="useratts">Posted Tweets: <%= current_user.tweet_count %></div>
+		<div class="useratts2">Posts Available: <%= current_user.count %></div>
 	</div>
 
 	<div class="scrollcontainer">
+		<% if current_user.count > 0 %>
 		<div class="twitcontainer">
 			<% @campaigns.each do |c| %>
 			<% if (c.followers <= current_user.followers) && (c.location == current_user.location) && (c.tweets > 0) %>
@@ -58,6 +60,11 @@
 			<% end %>
 
 		</div>
+		<% else %>
+		<div class="checkback">
+			<div class="checktext">You've already made 3 posts today. Check back tomorrow!</div>
+		</div>
+		<% end %>
 	</div>
 </div>
 

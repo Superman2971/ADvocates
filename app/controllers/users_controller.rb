@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     current_user.update_attribute(:tweet_count, current_user.tweet_count + 1)
     # Subtract tweet count from the campaign
     current_user.campaigns.last.update_attribute(:tweets, current_user.campaigns.last.tweets - 1)
+    current_user.update_attribute(:count, current_user.count - 1 )
     redirect_to users_path
     else
     current_user.imgtweet(params[:status], params[:img])
@@ -33,8 +34,9 @@ class UsersController < ApplicationController
     CampaignUser.create(user_id:current_user.id,campaign_id:params[:campaign])
     # Add tweet count to the user
     current_user.update_attribute(:tweet_count, current_user.tweet_count + 1)
-    # Subtract tweet count from the campaign
+    # Subtract tweet count from the campaign 
     current_user.campaigns.last.update_attribute(:tweets, current_user.campaigns.last.tweets - 1)
+    
     redirect_to users_path
     end
   end

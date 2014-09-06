@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     # Find the campaign post business owner
     business = Campaign.find(self.campaign_id)
     # Logic to modify tweets business has left
-
+    
     # How to hid campaign once they hit 0 ????
   end
 
@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     puts auth.to_json
   	user = find_by(uid: auth.slice(:uid).uid) || initialize_from_omniauth(auth)
   	user.update_dynamic_attributes(auth)
+  end
+
+  def reset
+    user.count = 3
   end
 
  def self.initialize_from_omniauth(auth)

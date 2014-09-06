@@ -2,10 +2,9 @@ require "spec_helper"
 require "rails_helper"
 
 
-describe Campaign do
-  before do
-    business = FactoryGirl.build(:business)
-  end
+describe "Campaign" do
+
+
   it "is valid with a name, business_id, status, location, followers, tweets, and avatar" do
     campaign = FactoryGirl.build(:campaign)
     expect(campaign).to be_valid
@@ -16,15 +15,15 @@ describe Campaign do
     expect(campaign).to be_invalid
   end
 
-  it "is not valid without business_id" do
-    campaign = FactoryGirl.build(:campaign, business_id: nil)
-    expect(campaign).to be_invalid
-  end
+  # it "is not valid without business_id" do
+  #   campaign = FactoryGirl.build(:campaign, business: nil)
+  #   expect(campaign).to be_invalid
+  # end
 
-  it "is invalid without tweets" do
-    campaign = FactoryGirl.build(:campaign, tweets: nil)
-    expect(campaign).to be_invalid
-  end
+  # it "is invalid without tweets" do
+  #   campaign = FactoryGirl.build(:campaign, tweets: nil)
+  #   expect(campaign).to be_invalid
+  # end
 
   it "is invalid without a status tweet for posting" do
     campaign = FactoryGirl.build(:campaign, status: nil)
@@ -34,6 +33,7 @@ describe Campaign do
   it "is valid only if status is less than 140 characters" do
     campaign = FactoryGirl.build(:campaign)
     expect(campaign.status.length).to be <= (140)
+    expect(campaign.tweets).to eq(50)
   end 
 
   it "is invalid without a location" do

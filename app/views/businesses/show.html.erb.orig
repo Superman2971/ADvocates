@@ -73,12 +73,12 @@
           </div>
           <div class="field">
             <%= f.label 'Select ADvocate Location' %><br>
-            <% shortlist = User.select(:location).uniq %>
 <<<<<<< HEAD
-            <%= f.select("location", shortlist.collect {|u| u.location }, { include_blank: true }, :required => true) %>
-=======
             <%= f.select("location", User.all.collect {|u| u.location }.uniq, { include_blank: true }, :required => true) %>
->>>>>>> 3f940eb80d2e178920eb43403b39ce060b4b0460
+=======
+            <% shortlist = User.select(:location).uniq %>
+            <%= f.select("location", shortlist.collect {|u| u.location }, { include_blank: true }, :required => true) %>
+>>>>>>> 5739054140b89b3ae2f8ad3d210cb02730b96a19
           </div>
           <div class="field">
             <%= f.label 'Minimum ADvocate Followers' %><br>
@@ -94,7 +94,7 @@
 
           <br>
           <div class="actions">
-            <%= f.submit "Create Campaign", :class => "busbutton" %>
+            <%= f.submit "Create Campaign", :class => "redbutton" %>
           </div>
         <% end %>
         <!-- new campaign end -->

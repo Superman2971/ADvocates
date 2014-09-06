@@ -1,7 +1,7 @@
 FactoryGirl.define do 
 	factory :campaign do
 		name "Test"
-		business_id 1
+		business 
 		status "Testing"
 		location "Test"
 		followers "Test"
