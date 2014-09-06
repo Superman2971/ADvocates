@@ -4,6 +4,8 @@ gem 'rmagick', '2.13.2'
 
 gem 'whenever', :require => false
 
+gem 'unicorn'
+
 gem 'stripe'
 # Paperclip
 gem "paperclip"
