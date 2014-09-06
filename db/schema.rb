@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20140905175507) do
     t.string   "background_image"
     t.string   "tweets"
     t.integer  "tweet_count"
-    t.integer  "count",            default: 1
+    t.integer  "count",            default: 3
   end
 
 end
