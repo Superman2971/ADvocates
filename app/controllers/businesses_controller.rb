@@ -48,7 +48,7 @@ class BusinessesController < ApplicationController
   private
 
   def control_access
-    if @business.id.to_s != current_business.idow.to_s
+    if @business.id.to_s != current_business.to_s
       redirect_to root_path
     end
   end
