@@ -137,29 +137,31 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        <%= form_for(business_edit) do |f| %>
+        <% if business_edit %>
+          <%= form_for(business_edit) do |f| %>
 
-        <% flash.each do |k,v| %>
-          <div class="col-md-12 alert alert-danger" role="alert">
-            <%= v %>
-          </div>
-        <% end %>
+            <% flash.each do |k,v| %>
+              <div class="col-md-12 alert alert-danger" role="alert">
+                <%= v %>
+              </div>
+            <% end %>
 
-        <div class="field">
-          <%= f.label :name %><br>
-          <%= f.text_field :name, :class => "form-control input-lg" %>
-        </div>
-        <div class="field">
-          <%= f.label :email %><br>
-          <%= f.text_field :email, :class => "form-control input-lg" %>
-        </div>
-        <div class="field">
-          <%= f.label :password %><br>
-          <%= f.password_field :password, :class => "form-control input-lg" %>
-        </div>
-        <div class="actions">
-          <%= f.submit "Update", :class => "redbutton" %>
-        </div>
+            <div class="field">
+              <%= f.label :name %><br>
+              <%= f.text_field :name, :class => "form-control input-lg" %>
+            </div>
+            <div class="field">
+              <%= f.label :email %><br>
+              <%= f.text_field :email, :class => "form-control input-lg" %>
+            </div>
+            <div class="field">
+              <%= f.label :password %><br>
+              <%= f.password_field :password, :class => "form-control input-lg" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "Update", :class => "redbutton" %>
+            </div>
+          <% end %>
         <% end %>
       </div>
       <div class="modal-footer">

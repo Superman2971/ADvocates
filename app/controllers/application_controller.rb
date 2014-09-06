@@ -26,7 +26,7 @@ private
   helper_method :business_new
 
   def business_edit
-    @business = Business.find(params[:id])
+    @business = Business.where(id: params[:id]).first
   end
 
   helper_method :business_edit
