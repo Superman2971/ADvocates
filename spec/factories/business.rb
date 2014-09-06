@@ -4,7 +4,6 @@ FactoryGirl.define do
 		email "Test@testing.com"
 		password "Testing"
 		tweets 100
-		id 1
 	end
 	
 end

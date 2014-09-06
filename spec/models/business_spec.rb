@@ -1,6 +1,8 @@
 require "spec_helper"
 
-describe Business do
+
+
+describe "Business" do
   it "is valid with name, email, password, and tweets" do
     business = FactoryGirl.build(:business)
     expect(business).to be_valid
