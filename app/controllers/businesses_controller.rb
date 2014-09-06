@@ -1,10 +1,13 @@
 class BusinessesController < ApplicationController
+
+    before_action :set_business, only: [:show,:edit,:update,:destroy]
+    before_action :control_access, only: [:show,:edit,:update,:destroy]
+
   def index
     @businesses = Business.all
   end
 
   def show
-    @business = Business.find(params[:id])
   end
 
   def new
@@ -25,11 +28,9 @@ class BusinessesController < ApplicationController
   end
 
   def edit
-    @business = Business.find(params[:id])
   end
 
   def update
-    @business = Business.find(params[:id])
     if @business.update(business_params)
       redirect_to business_path(@business.id)
     else
@@ -38,13 +39,23 @@ class BusinessesController < ApplicationController
   end
 
   def destroy
-    Business.find(params[:id]).campaigns.destroy_all
-    Business.find(params[:id]).destroy
+    @business.campaigns.destroy_all
+    @business.destroy
     reset_session
     redirect_to root_path
   end
 
   private
+
+  def control_access
+    if @business.id.to_s != current_business.id.to_s
+      redirect_to root_path
+    end
+  end
+
+  def set_business
+    @business = Business.find(params[:id])
+  end
 
   def business_params
     params.require(:business).permit(:name, :email, :password, :password_confirmation)
