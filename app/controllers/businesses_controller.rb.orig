@@ -4,13 +4,26 @@ class BusinessesController < ApplicationController
     before_action :control_access, only: [:show,:edit,:update,:destroy]
 
   def index
+    if !current_business
+      redirect_to root_path
+    end
     @businesses = Business.all
   end
 
   def show
+<<<<<<< HEAD
+=======
+    if !current_business
+      redirect_to root_path
+    end
+    @business = Business.find(params[:id])
+>>>>>>> c1811d5046c986853e8ec665c5cbfdc8808a6f96
   end
 
   def new
+    if !current_business
+      redirect_to root_path
+    end
     @business = Business.new
     
   end
@@ -28,9 +41,23 @@ class BusinessesController < ApplicationController
   end
 
   def edit
+<<<<<<< HEAD
   end
 
   def update
+=======
+    if !current_business
+      redirect_to root_path
+    end
+    @business = Business.find(params[:id])
+  end
+
+  def update
+    if !current_business
+      redirect_to root_path
+    end
+    @business = Business.find(params[:id])
+>>>>>>> c1811d5046c986853e8ec665c5cbfdc8808a6f96
     if @business.update(business_params)
       redirect_to business_path(@business.id)
     else
@@ -48,7 +75,7 @@ class BusinessesController < ApplicationController
   private
 
   def control_access
-    if @business.id.to_s != current_business.to_s
+    if @business.id.to_s != current_business.idow.to_s
       redirect_to root_path
     end
   end
