@@ -20,7 +20,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     if @campaign.save
       @campaign.modify_quantity
-      redirect_to business_path(current_business.id)
+      redirect_to businesses_path
     else
       flash[:notice] = "Need more tweets in order to make that campaign post"
       redirect_to businesses_path

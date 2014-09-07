@@ -13,11 +13,11 @@ describe BusinessesController do
 	describe "GET show" do
 		before do 
 			@business = Business.create! valid_attributes
-			get :show, id: @business.id
+			get :index, id: @business.id
 		end
 
 		it "should render the show template" do
-			expect(response).to render_template :show
+			expect(response).to render_template :index
 		end
 
 		it "should succeed" do
@@ -64,7 +64,7 @@ describe BusinessesController do
 	describe "DELETE business" do
 		before do
 			@business = Business.create! valid_attributes
-			get :show, id: @business.id
+			get :index, id: @business.id
 		end
 
 		it "should delete a business from the database" do
