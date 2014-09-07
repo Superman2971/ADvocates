@@ -1,8 +1,8 @@
 <div class="buscontainer">
-  <h1><%= @business.name %> Campaigns / Unused Tweets: <%= @business.tweets %></h1>
+  <h1><%= current_business.name %> Campaigns / Unused Tweets: <%= current_business.tweets %></h1>
   <div class="busscrollcontainer">
     <div class="twitcontainer">
-      <% @business.campaigns.each do |c| %>
+      <% current_business.campaigns.each do |c| %>
         <div class="twitcontent">
 
           <div class="campaigntweets">
@@ -84,7 +84,7 @@
             <%= f.number_field :tweets, :class => "form-control", :required => true %>
           </div>
 
-            <%= f.hidden_field :business_id, value: @business.id %>
+            <%= f.hidden_field :business_id, value: current_business.id %>
 
 
           <br>

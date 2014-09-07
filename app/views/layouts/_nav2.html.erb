@@ -67,8 +67,7 @@
 				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
 			</div>
 			<div class="modal-body">
-        <% if business_edit %>
-					<%= form_for(business_edit) do |f| %>
+					<%= form_for(current_business) do |f| %>
 
 						<% flash.each do |k,v| %>
 						<div class="col-md-12 alert alert-danger" role="alert">
@@ -92,7 +91,6 @@
 							<%= f.submit "Update", :class => "redbutton" %>
 						</div>
 					<% end %>
-				<% end %>
 			</div>
 			<div class="modal-footer">
 			</div>

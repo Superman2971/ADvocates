@@ -23,7 +23,7 @@ class CampaignsController < ApplicationController
       redirect_to business_path(current_business.id)
     else
       flash[:notice] = "Need more tweets in order to make that campaign post"
-      redirect_to business_path(current_business.id)
+      redirect_to businesses_path
     end
   end
 

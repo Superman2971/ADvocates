@@ -1,23 +1,146 @@
-<h1>BUSINESS INDEX</h1>
-<h1>Test</h1>
-  <tbody>
-    <% @businesses.each do |b| %>
-      <tr>
-        <td><%= b.name %></td>
-        <td><%= link_to 'Show', b %></td>
-        <td>
-      </tr>
-      <br>
-    <% end %>
-  </tbody>
-</table>
+<div class="buscontainer">
+  <h1><%= current_business.name %> Campaigns / Unused Tweets: <%= current_business.tweets %></h1>
+  <div class="busscrollcontainer">
+    <div class="twitcontainer">
+      <% current_business.campaigns.each do |c| %>
+        <div class="twitcontent">
 
-<h3>{{test}}</h3>
-<ul>
-  <li ng-repeat="campaign in campaigns">
-    {{ campaign.id }}
-    {{ campaign.name }}
-    {{ campaign.status }}
-    {{ campaign.avatar_file_name }}
-  </li>
-</ul>
+          <div class="campaigntweets">
+            <%= c.tweets %>
+            <div class="campaigntweetsunder">
+              Tweets
+              <p>Left</p>
+            </div>   
+          </div>
+          <div class="twitright">
+            <div class="campaignname">
+              <%= c.name %>
+            </div>
+            <div class="twitname">
+              Example
+            </div>
+            <div class="twitscreenname">
+                &nbsp @example
+            </div>
+
+            <div class="status">
+              <%= c.status %>
+            </div>
+            <div class="twitstatusimg">
+              <% if c.avatar.url != "/avatars/original/missing.png" %>
+              <%= image_tag(c.avatar.url(:original), :class => "statusimg") %>
+              <% end %>
+            </div>
+            <div class="promotedby">
+              Promoted by <%= c.business.name %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+  </div>
+</div>
+
+  <div class="bustabcontainer">
+  <!-- Business nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#newcamp" role="tab" data-toggle="tab">New Campaign</a></li>
+      <li><a href="#buytweets" role="tab" data-toggle="tab">Buy Tweets</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="newcamp">
+        <!-- new campaigns begin -->
+        <%= form_for(campaign_new) do |f| %>
+
+          <% flash.each do |k,v| %>
+            <div class="col-md-12 alert alert-danger" role="alert">
+              <%= v %>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label 'Name to reference this post by' %><br>
+            <%= f.text_field :name, :class => "form-control", :required => true %>
+          </div>
+          <div class="field">
+            <%= f.label 'Input text for the post (up to 140 characters)' %><br>
+            <%= f.text_field :status, :class => "form-control", :required => true %>
+          </div>
+          <div class="field">
+            <%= f.label 'Input Image' %><br>
+          <%= f.file_field :avatar, :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label 'Select ADvocate Location' %><br>
+            <%= f.select("location", User.all.collect {|u| u.location }.uniq, { include_blank: true }, :required => true) %>
+          </div>
+          <div class="field">
+            <%= f.label 'Minimum ADvocate Followers' %><br>
+            <%= f.number_field :followers, :class => "form-control", :required => true %>
+          </div>
+          <div class="field">
+            <%= f.label 'Tweets' %><br>
+            <%= f.number_field :tweets, :class => "form-control", :required => true %>
+          </div>
+
+            <%= f.hidden_field :business_id, value: current_business.id %>
+
+
+          <br>
+          <div class="actions">
+            <%= f.submit "Create Campaign", :class => "redbutton" %>
+          </div>
+        <% end %>
+        <!-- new campaign end -->
+      </div>
+      <div class="tab-pane" id="buytweets">
+        <!-- charges begin -->
+        <%= form_tag charges_path do %>
+          <article>
+            <label class="amount">
+            <span>$10.00 / 5 Tweets</span>
+            </label>
+          </article>
+          <%= hidden_field_tag(:money, "1000") %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="5 Tweets"
+            data-amount="1000"></script>
+          <% end %>
+
+          <%= form_tag charges_path do %>
+            <article>
+              <label class="amount">
+              <span>$30.00 / 20 Tweets</span>
+              </label>
+            </article>
+            <%= hidden_field_tag(:money, "3000") %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="5 Tweets"
+            data-amount="3000"></script>
+          <% end %>
+
+          <%= form_tag charges_path do %>
+            <article>
+              <label class="amount">
+              <span>$100.00 / 60 Tweets</span>
+              </label>
+            </article>
+            <%= hidden_field_tag(:money, "10000") %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="5 Tweets"
+            data-amount="10000"></script>
+        <% end %>
+        <!-- charges end -->
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+body {
+  background-color: #8fc0db;
+}
+</style>

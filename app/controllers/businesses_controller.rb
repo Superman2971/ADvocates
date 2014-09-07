@@ -20,7 +20,7 @@ class BusinessesController < ApplicationController
     if @business.save
       @business = Business.where(name: params[:business][:name]).first
       session[:business_id] = @business.id.to_s
-      redirect_to business_path(@business.id)
+      redirect_to businesses_path
     else
       flash[:notice] = "Password must be at least 6 characters and match the password confirmation"
       redirect_to root_path
@@ -32,7 +32,7 @@ class BusinessesController < ApplicationController
 
   def update
     if @business.update(business_params)
-      redirect_to business_path(@business.id)
+      redirect_to businesses_path
     else
       render "edit"
     end
