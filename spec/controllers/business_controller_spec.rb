@@ -40,7 +40,7 @@ describe BusinessesController do
 
 			it "should redirect to the show page for business" do
 				post :create, business: valid_attributes
-				expect(response).to redirect_to business_path(assigns(:business))
+				expect(response).to redirect_to businesses_path
 			end
 		end
 	end
