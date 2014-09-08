@@ -34,7 +34,7 @@ class CampaignsController < ApplicationController
   def update
     @campaign = Campaign.find(params[:id])
     if @campaign.update_attributes(campaign_params)
-    redirect_to business_path(current_business.id)
+    redirect_to businesses_path
     else
       render 'edit'
     end
@@ -42,7 +42,7 @@ class CampaignsController < ApplicationController
 
   def destroy
     Campaign.find(params[:id]).destroy
-    redirect_to business_path(current_business.id)
+    redirect_to businesses_path
   end
 
   private
