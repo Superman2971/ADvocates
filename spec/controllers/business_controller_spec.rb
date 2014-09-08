@@ -23,6 +23,7 @@ describe BusinessesController do
 		it "should succeed" do
 			expect(response).to be_success
 		end
+		
 	end
 
 
