@@ -4,7 +4,6 @@
 		<div class="useratts">Tweets: <%= current_user.followers %></div>
 		<div class="useratts">Followers: <%= current_user.tweets %></div>
 		<div class="useratts">Posted Tweets: <%= current_user.tweet_count %></div>
-		<div class="useratts2">Posts Available: <%= current_user.count %></div>
 	</div>
 
 	<div class="scrollcontainer">
@@ -62,7 +61,7 @@
 		</div>
 		<% else %>
 		<div class="checkback">
-			<div class="checktext">You've already made 1 post today. Check back tomorrow!</div>
+			<div class="checktext">You've already made 3 posts today. Check back tomorrow!</div>
 		</div>
 		<% end %>
 	</div>
