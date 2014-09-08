@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       @business = Business.where(email: params[:business][:email]).first
       if @business && @business.authenticate(params[:business][:password])
         session[:business_id] = @business.id.to_s
-        redirect_to business_path(@business.id)
+        redirect_to businesses_path
       else 
         flash[:notice] = "Email and/or Password did not match our database"
         redirect_to root_path
