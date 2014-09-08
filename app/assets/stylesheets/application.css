@@ -17,8 +17,8 @@
 @import 'bootstrap';
 @import 'bootstrap/glyphicons';
 
-html {
-	font-size: 14px;
+label {
+	font-size: 16px;
 }
 
 .redbutton {
