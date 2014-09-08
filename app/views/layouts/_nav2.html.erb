@@ -10,11 +10,11 @@
 				<span class="icon-bar"></span>
 			</button>
 			<% if !current_user && !current_business %> 
-			<%= link_to "ADVOCATES", root_path, class:"navbar-brand" %>
+			<%= link_to "", root_path, class:"navlogo" %>
 			<% elsif current_user %>
-			<%= link_to "ADVOCATES", users_path, class:"navbar-brand" %>
+			<%= link_to "", users_path, class:"navlogo" %>
 			<% else %>
-			<%= link_to "ADVOCATES", businesses_path, class:"navbar-brand" %>
+			<%= link_to "", businesses_path, class:"navlogo" %>
 			<% end %>
 		</div>
 

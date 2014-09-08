@@ -169,6 +169,11 @@ z-index: 6;
 	margin-left: 20px;
 }
 
+.logo:hover {
+	-webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
 /* video billboard level */
 .billboard {
 	background-image: url("billboard.png");

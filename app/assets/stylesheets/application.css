@@ -59,3 +59,40 @@
 	width: 410px;
 	height: 200px;
 }
+
+.navlogo {
+	background-image: url("logo.png");
+	float: left;
+	height: 60px;
+	width: 76px;
+	background-size: cover;
+	
+}
+
+.navpadding {
+	padding: 15px;
+	float:left;
+	margin-left: 20px;
+}
+
+.navlogo:hover {
+	-webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.navbar-default {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-color: transparent;
+	border-color-bottom: black;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border-color: transparent;
+	border-color-bottom: black;
+}
+
+.dropdown {
+	margin-top: 5px;
+	float: right;
+}
+

@@ -258,9 +258,7 @@ body, html {
   <!-- Ticker Feed for bottom of Homepage using our own API json -->
   <div class="ticker">
     <div class="ticker_post" ng-repeat="campaign in campaigns">
-      &nbsp  &nbsp &nbsp &nbsp
-      {{ campaign.status }} 
-      &nbsp &nbsp &nbsp &nbsp
+      <div class="status">{{ campaign.status }}</div>
     </div>
   </div>
 </div>
