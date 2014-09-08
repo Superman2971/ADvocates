@@ -29,6 +29,8 @@
 	-webkit-transform: translateZ(201px) scale(.5);
 	transform: translateZ(201px) sclae(.5);
 	-moz-transform: translateZ(201px) sclae(.5);
+	height: 100px;
+	margin-top: 125px;
 }
 
 
@@ -48,6 +50,12 @@
 	-webkit-transform: translateZ(300px) scale(.5);
 	transform: translateZ(300px) scale(.5);
 	-moz-transform: translateZ(300px) scale(.5);
+}
+
+.parallax-layer-quotes {
+	-webkit-transform: translateZ(270px) scale(.4);
+	transform: translateZ(270px) scale(.4);
+	-moz-transform: translateZ(270px) scale(.4);
 }
 
 .parallax-layer-4 {
@@ -350,4 +358,66 @@ z-index: 6;
 	padding-bottom: 20px;
 	margin-top: 20px;
 	margin-right: 20px;
+}
+
+/* user quotes and text */
+
+.quotes1 {
+	float: left;
+	width: 250px;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 20px;
+	color: black;
+	padding: 10px;
+	margin-top: -200px;
+	margin-left: -50px;
+}
+
+.quotes2 {
+	float: right;
+	width: 250px;
+	padding: 10px;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 20px;
+	color: black;
+	margin-top: -200px;
+	margin-right: -80px;
+}
+
+.quotemarks {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 60px;
+	color: white;
+	text-shadow: 2px 2px #658866;
+	margin-left: -40px;
+	height: 20px;
+	width: 20px;
+}
+
+.reviewers {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.userintro {
+	float: left;
+	width: 700px;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 22px;
+	color: black;
+	padding: 10px;
+	margin-top: -1300px;
+	margin-left: -50px;
+}
+
+.busintro {
+	float: right;
+	width: 800px;
+	padding: 10px;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 22px;
+	color: white;
+	margin-top: -350px;
+	margin-right: 0px;
 }

@@ -66,27 +66,27 @@ body, html {
   -webkit-animation: ticker 60s linear infinite;
   -moz-animation: ticker 60s linear infinite;
   -ms-animation: ticker 60s linear infinite;
-    animation: ticker 60s linear infinite;
+  animation: ticker 60s linear infinite;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes ticker {
-    from {left: 0;}
-    to {left: -9000px;}
+  from {left: 0;}
+  to {left: -9000px;}
 }
 /* Standard syntax */
 @keyframes ticker {
-    from {left: 0;}
-    to {left: -9000px;}
+  from {left: 0;}
+  to {left: -9000px;}
 }
 /* Firefox */
 @-moz-keyframes ticker {
-    from {left: 0;}
-    to {left: -9000px;}
+  from {left: 0;}
+  to {left: -9000px;}
 }
 /* Internet Explorer */
 @-ms-keyframes ticker {
-    from {left: 0;}
-    to {left: -9000px;}
+  from {left: 0;}
+  to {left: -9000px;}
 }
 </style>
 <div class="parallax">
@@ -105,7 +105,11 @@ body, html {
       </div>
     </div>
     <div class="parallax-layer parallax-layer-1">
-        <div class="billboard"></div>
+      <div class="billboard">
+        <div class="kylesvid">
+          <iframe width="410" height="200" src="//www.youtube.com/embed/tv46CALqCrw?rel=0;3&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
   </div>
   <!-- clouds level -->
@@ -133,6 +137,20 @@ body, html {
   </div>
   <!-- city building level -->
   <div id="city-level" class="parallax-group">
+    <div class="parallax-layer parallax-layer-quotes">
+      <div class="userintro">
+        <strong><p>Advocates!</p></strong>
+        <p>* Sign up and get paid to post ads to help local businesses!</p>
+        <p>* Hipsters, join us, no one else is doing it!</p>
+        <p>* Like literally, no one else is doing it. We have no users. Please sign up.</p>
+      </div>
+      <div class="busintro">
+        <strong><p>Businesses!</p></strong>
+        <p>* Want a social media campaign, but not spend a bunch of money on it?</p>
+        <p>* You don't even understand the interent, do you?</p>
+        <p>* That's fine, use Advocates! We'll connect you with local users to promote on your behalf!</p>
+      </div>
+    </div>
     <div class="parallax-layer parallax-layer-2">
       <div class="citybg">
         <div class="buildinglights"></div>
@@ -168,6 +186,26 @@ body, html {
     <div class="parallax-layer parallax-layer-2">
       <div class="leaves"></div>
     </div>
+    <div class="parallax-layer parallax-layer-quotes">
+      <div class="quotes1">
+        <strong><p>User Reviews</p></strong>
+        <div class="reviewers">Mark Z. from New York says:</div>
+        <div class="quotemarks">"</div><p>Advocates is by far the greatest website I have ever used.</p>
+        <br />
+        <br />
+        <div class="reviewers">Bill G from Washington says:</div>
+        <div class="quotemarks">"</div><p>I wish I had come up with Advocates, I'd be a billionaire by now!"</p>
+      </div>
+      <div class="quotes2">
+        <strong><p>Business Reviews</p></strong>
+        <div class="reviewers">Steve J. from Cuppertino says:</div>
+        <div class="quotemarks">"</div><p>If I could, I'd hire these guys instantly. Too bad I'm not around to do it."</p>
+        <br />
+        <br />
+        <div class="reviewers">Elon M. from South Africa says:</div>
+        <div class="quotemarks">"</div><p>After having signed up with Advocates, I feel like I could fly to Mars."</p>
+      </div>
+    </div>
   </div>
   <div id="underground-level" class="parallax-group">
     <div class="parallax-layer parallax-layer-nav">
@@ -176,38 +214,38 @@ body, html {
         <div class="businesslogin btn" data-toggle="modal" data-target="#loginModal"><span class="loginbutton"><a>business log in</a></span></div>
         <div class="userlogin btn"><span class="loginbutton"><%= link_to "user log in", "auth/twitter", :class => "loginbutton" %></span></div>
       </div>
-  <div class="signup-container">
-  <div class="bussignup">
-    <div><h3>Sign up as a business!</h3></div>
-   <%= form_for business_new do |f| %>
-      <% flash.each do |k,v| %>
-        <div class="col-md-12 alert alert-danger" role="alert">
-          <%= v %>
+      <div class="signup-container">
+        <div class="bussignup">
+          <div><h3>Sign up as a business!</h3></div>
+          <%= form_for business_new do |f| %>
+          <% flash.each do |k,v| %>
+          <div class="col-md-12 alert alert-danger" role="alert">
+            <%= v %>
+          </div>
+          <% end %>
+          <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name, :required => true, :class => "form-control input-lg" %>
+          </div>
+          <div class="field">
+            <%= f.label :email %><br>
+            <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :class => "form-control input-lg" %>
+          </div>
+          <div class="field">
+            <%= f.label :password %><br>
+            <%= f.password_field :password, :required => true, :class => "form-control input-lg" %>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation %><br>
+            <%= f.password_field :password_confirmation, :required => true, :class => "form-control input-lg" %>
+          </div>
+          <br>
+          <div class="actions">
+            <%= f.submit "Sign up", :class => "blackbutton" %>
+          </div>
+          <% end %> 
         </div>
-      <% end %>
-      <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name, :required => true, :class => "form-control input-lg" %>
       </div>
-      <div class="field">
-        <%= f.label :email %><br>
-        <%= f.text_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :class => "form-control input-lg" %>
-      </div>
-      <div class="field">
-        <%= f.label :password %><br>
-        <%= f.password_field :password, :required => true, :class => "form-control input-lg" %>
-      </div>
-      <div class="field">
-        <%= f.label :password_confirmation %><br>
-        <%= f.password_field :password_confirmation, :required => true, :class => "form-control input-lg" %>
-      </div>
-      <br>
-      <div class="actions">
-        <%= f.submit "Sign up", :class => "blackbutton" %>
-      </div>
-    <% end %> 
-  </div>
-</div>
 
     </div>
     <div class="parallax-layer parallax-layer-4">
@@ -239,18 +277,18 @@ body, html {
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-    <%= form_for business_new, url: session_path do |f| %>
-      <% flash.each do |k,v| %>
+        <%= form_for business_new, url: session_path do |f| %>
+        <% flash.each do |k,v| %>
         <div class="col-md-12 alert alert-danger" role="alert">
           <%= v %>
         </div>
-      <% end %>
-    <%= hidden_field_tag :test, "test" %>
-    Account Email:  <%= f.text_field :email, :required => true, :class => "form-control input-lg", placeholder: "Email Here..." %>
-    <br />
-    Password: <%= f.password_field :password, :required => true, :class => "form-control input-lg", placeholder: "Password Here..." %>
-    <%= f.submit "Log in", :class => "redbutton" %>
-  <% end %>
+        <% end %>
+        <%= hidden_field_tag :test, "test" %>
+        Account Email:  <%= f.text_field :email, :required => true, :class => "form-control input-lg", placeholder: "Email Here..." %>
+        <br />
+        Password: <%= f.password_field :password, :required => true, :class => "form-control input-lg", placeholder: "Password Here..." %>
+        <%= f.submit "Log in", :class => "redbutton" %>
+        <% end %>
       </div>
       <div class="modal-footer">
       </div>
