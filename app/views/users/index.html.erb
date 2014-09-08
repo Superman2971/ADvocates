@@ -1,8 +1,8 @@
 <div class="userindex-container">
 	<div class="usercontainer">
 		<div class="useratts"><%= current_user.name %></div>
-		<div class="useratts">Tweets: <%= current_user.followers %></div>
-		<div class="useratts">Followers: <%= current_user.tweets %></div>
+		<div class="useratts">Tweets: <%= current_user.tweets %></div>
+		<div class="useratts">Followers: <%= current_user.followers %></div>
 		<div class="useratts">Posted Tweets: <%= current_user.tweet_count %></div>
 	</div>
 
@@ -10,7 +10,7 @@
 		<% if current_user.count > 0 %>
 		<div class="twitcontainer">
 			<% @campaigns.each do |c| %>
-			<% if (c.followers <= current_user.followers) && (c.location == current_user.location) && (c.tweets > 0) %>
+			<% if (c.followers.to_i <= current_user.followers.to_i) && (c.location == current_user.location) && (c.tweets > 0) %>
 				<% array = [] %>
 			<% CampaignUser.all.each do |x| %>
 				<% if (x.user_id == current_user.id) && (x.campaign_id == c.id) %>
