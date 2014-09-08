@@ -365,7 +365,7 @@ z-index: 6;
 .quotes1 {
 	float: left;
 	width: 250px;
-	font-family: 'Permanent Marker', cursive;
+	font-family: "HelveticaNeue-Light";
 	font-size: 20px;
 	color: black;
 	padding: 10px;
@@ -377,7 +377,7 @@ z-index: 6;
 	float: right;
 	width: 250px;
 	padding: 10px;
-	font-family: 'Permanent Marker', cursive;
+	font-family: "HelveticaNeue-Light";
 	font-size: 20px;
 	color: black;
 	margin-top: -200px;
@@ -385,7 +385,7 @@ z-index: 6;
 }
 
 .quotemarks {
-	font-family: 'Permanent Marker', cursive;
+	font-family: "HelveticaNeue-Light";
 	font-size: 60px;
 	color: white;
 	text-shadow: 2px 2px #658866;
@@ -395,29 +395,29 @@ z-index: 6;
 }
 
 .reviewers {
-	font-family: 'Permanent Marker', cursive;
+	font-family: "HelveticaNeue-Light";
 	font-size: 22px;
 	font-weight: bold;
 }
 
 .userintro {
 	float: left;
-	width: 700px;
-	font-family: 'Permanent Marker', cursive;
+	width: 1100px;
+	font-family: "HelveticaNeue-Light";
 	font-size: 22px;
 	color: black;
 	padding: 10px;
-	margin-top: -1300px;
+	margin-top: -1360px;
 	margin-left: -50px;
 }
 
 .busintro {
 	float: right;
-	width: 800px;
+	width: 1000px;
 	padding: 10px;
-	font-family: 'Permanent Marker', cursive;
+	font-family: "HelveticaNeue-Light";
 	font-size: 22px;
 	color: white;
 	margin-top: -350px;
-	margin-right: 0px;
+	margin-right: -100px;
 }
