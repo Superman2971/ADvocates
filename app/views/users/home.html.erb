@@ -10,6 +10,17 @@ body, html {
   color: white;
   text-decoration: none;
 }
+
+.parallax-group .blackbutton { 
+  color: white;
+  text-decoration: none;
+}
+
+.parallax-group .blackbutton:hover { 
+  color: black;
+  text-decoration: none;
+}
+
 .businesslogin {
   margin-top: 15px;
   height: 40px;
@@ -213,8 +224,14 @@ body, html {
         <div class="userlogin btn"><span class="loginbutton"><%= link_to "user log in", "auth/twitter", :class => "loginbutton" %></span></div>
       </div>
       <div class="signup-container">
+        <div class="usersignup">
+          <div><h3>Sign up as an Advocate!</h3></div>
+          <div class="signuppadding">
+            <%= link_to "Sign up with Twitter!", "auth/twitter", :class => "blackbutton" %>
+          </div>
+        </div>
         <div class="bussignup">
-          <div><h3>Sign up as a business!</h3></div>
+          <div><h3>Sign up as a Business!</h3></div>
           <%= form_for business_new do |f| %>
           <% flash.each do |k,v| %>
           <div class="col-md-12 alert alert-danger" role="alert">
@@ -251,6 +268,7 @@ body, html {
         <div class="pipeleft"></div>
         <div class="piperight"></div>
         <div class="pipecenter"></div>
+        <div class="pipedropdown"></div>
       </div>
     </div>
   </div>

@@ -349,6 +349,16 @@ z-index: 6;
 	background-size: cover;
 }
 
+.pipedropdown {
+	background-image: url('pipedropdown.png');
+	width: 350px;
+	height: 400px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -30px;
+	background-size: cover;
+}
+
 /* signup*/
 .signup-container {
 	margin-left: auto;
@@ -363,6 +373,22 @@ z-index: 6;
 	padding-bottom: 20px;
 	margin-top: 20px;
 	margin-right: 20px;
+}
+
+.usersignup {
+	float: left;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	padding-bottom: 20px;
+	margin-top: 180px;
+	margin-right: 20px;
+}
+
+.signuppadding {
+	padding-top: 20px;
+	padding-left: 43px;
+	padding-bottom: 20px;
 }
 
 /* user quotes and text */
