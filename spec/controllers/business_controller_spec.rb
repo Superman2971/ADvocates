@@ -10,7 +10,7 @@ describe BusinessesController do
 		}
 	end
 
-	describe "GET show" do
+	describe "GET index" do
 		before do 
 			@business = Business.create! valid_attributes
 			get :index, id: @business.id
@@ -22,10 +22,6 @@ describe BusinessesController do
 
 		it "should succeed" do
 			expect(response).to be_success
-		end
-
-		it "should assign business" do
-			expect(assigns(:business)).to eq(@business)
 		end
 	end
 
