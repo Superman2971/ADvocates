@@ -17,6 +17,10 @@
 @import 'bootstrap';
 @import 'bootstrap/glyphicons';
 
+html {
+	font-size: 14px;
+}
+
 .redbutton {
 	margin-top: 20px;
 	background-color: #be1831;
