@@ -1,5 +1,9 @@
 /*parallax classes*/
 
+html {
+	font-size: 14px;
+}
+
 .parallax {
   height: 100vh;
   overflow-x: hidden;
